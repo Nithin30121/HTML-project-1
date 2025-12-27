@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajanta Caves – One Guide</title>
+
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+
+    body{background:#f4f6fb;color:#003A99;}
+
+    /* TOP NAV */
+    .topnav{display:flex;align-items:center;background-color:#00072d;padding:12px 20px;gap:25px;}
+    .topnav a{color:white;text-decoration:none;font-size:16px;}
+    .right-side{margin-left:auto;display:flex;align-items:center;gap:20px;}
+    .zoom-controls button{background:transparent;border:none;color:#ffd86b;font-size:20px;font-weight:bold;cursor:pointer;}
+    .user-name{color:white;cursor:pointer;}
+
+    /* SECOND NAV */
+    .downnav{background-color:#16236c;padding:20px;display:flex;align-items:center;gap:20px;}
+    .downnav h1{color:white;font-size:38px;}
+    .logo{width:95px;}
+
+    /* SCROLL ANIMATION */
+    .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s ease;}
+    .reveal.active{opacity:1;transform:translateY(0);}
+
+    /* TITLE */
+    .page-title{background:#003F87;color:white;padding:18px;text-align:center;font-size:28px;font-weight:600;}
+
+    /* INTRO */
+    .intro-section{display:flex;justify-content:center;max-width:1150px;margin:auto;padding:40px 20px;gap:25px;}
+    .intro-box{background:#E8F1FF;padding:25px;width:50%;border-left:6px solid #003F87;border-radius:10px;}
+    .intro-box h2{color:#003F87;margin-bottom:10px;}
+    .intro-img{width:45%;}
+    .intro-img img{width:100%;border-radius:10px;}
+
+    /* SECTION HEADING */
+    .section-heading{text-align:center;margin-top:40px;font-size:30px;color:#003F87;font-weight:700;}
+
+    /* CONTENT */
+    .content-section{max-width:1150px;margin:40px auto;display:flex;gap:30px;padding:20px;}
+    .content-text{width:60%;font-size:17px;line-height:1.75;}
+    .content-img{width:40%;}
+    .content-img img{width:100%;border-radius:10px;}
+    .reverse{flex-direction:row-reverse;}
+
+    /* FOOTER */
+    footer{background:#00072d;color:white;text-align:center;padding:18px;margin-top:50px;}
+</style>
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+        <span id="usernameDisplay" class="user-name"></span>
+    </div>
+</nav>
+
+<!-- LOGO NAV -->
+<nav class="downnav">
+    <img src="image.png" class="logo">
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<!-- TITLE -->
+<div class="page-title">Ajanta Caves – Ancient Indian Heritage</div>
+
+<!-- INTRO -->
+<div class="intro-section reveal">
+    <div class="intro-box">
+        <h2>Introduction to Ajanta Caves</h2>
+        <p>
+            The Ajanta Caves, located in Maharashtra, are a UNESCO World Heritage Site 
+            known for their breathtaking Buddhist rock-cut architecture and mesmerizing fresco paintings.
+        </p>
+        <p>
+            Dating back to the 2nd century BCE, Ajanta represents some of the world’s earliest 
+            masterpieces of art, spirituality, and storytelling carved into stone.
+        </p>
+    </div>
+
+    <div class="intro-img">
+        <img src="https://cdn.pixabay.com/photo/2016/04/09/04/37/buddhism-1317432_1280.jpg">
+    </div>
+</div>
+
+<!-- SECTION 1 -->
+<h2 class="section-heading reveal">Art & Architecture of Ajanta</h2>
+
+<div class="content-section reveal">
+    <div class="content-text">
+        <p>
+            Ajanta’s 30 caves contain detailed murals depicting the Jataka tales—stories of 
+            Buddha’s previous births. These paintings, created with natural dyes, show advanced 
+            artistic techniques long before the Renaissance.
+        </p>
+        <p>
+            Intricate carvings, chaitya halls, and vihara-style monasteries highlight the mastery 
+            of ancient Indian artisans.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2017/06/22/19/21/ajanta-2432144_1280.jpg">
+    </div>
+</div>
+
+<!-- SECTION 2 -->
+<h2 class="section-heading reveal">Historical & Cultural Significance</h2>
+
+<div class="content-section reverse reveal">
+    <div class="content-text">
+        <p>
+            Ajanta was a center of Buddhist learning and spiritual practice. Monks, scholars, and 
+            artists gathered here to study philosophy, meditate, and create artistic chronicles of life.
+        </p>
+        <p>
+            Rediscovered in 1819, the caves continue to be a symbol of India’s unmatched artistic 
+            legacy and devotion.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2020/03/31/09/33/ajanta-caves-4986827__340.jpg">
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 One Guide. All Rights Reserved.
+</footer>
+
+<!-- SCRIPT -->
+<script>
+let fontSize=100;
+function changeZoom(step){fontSize+=step*10;document.documentElement.style.fontSize=fontSize+"%";}
+function resetZoom(){fontSize=100;document.documentElement.style.fontSize="100%";}
+function revealOnScroll(){document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-100){el.classList.add('active');}});}
+window.addEventListener('scroll',revealOnScroll);revealOnScroll();
+document.getElementById("usernameDisplay").textContent=localStorage.getItem("username")||"Login";
+</script>
+
+</body>
+</html>

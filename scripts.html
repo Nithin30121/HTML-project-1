@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Literature & Oral Traditions</title>
+
+<style>
+/* ========================= GLOBAL ========================= */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#f4f6fb;color:#003A99;}
+
+/* ========================= NAVBAR ========================= */
+.topnav{
+    display:flex;
+    align-items:center;
+    background:#00072d;
+    padding:12px 20px;
+    gap:25px;
+}
+.topnav a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+}
+.right-side{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+.zoom-controls button{
+    background:transparent;
+    border:none;
+    color:#ffd86b;
+    font-size:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+.zoom-controls button:hover{opacity:0.7;}
+.user-name{color:white;cursor:pointer;}
+
+/* ========================= LOGO NAV ========================= */
+.downnav{
+    background:#16236c;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+.logo{width:95px;}
+.downnav h1{
+    color:white;
+    font-size:38px;
+}
+
+/* ========================= SCROLL EFFECT ========================= */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.9s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+/* ========================= PAGE TITLE ========================= */
+.page-title{
+    background:#003F87;
+    color:white;
+    padding:18px;
+    text-align:center;
+    font-size:26px;
+    font-weight:600;
+}
+
+/* ========================= INTRO ========================= */
+.intro-section{
+    display:flex;
+    justify-content:center;
+    max-width:1150px;
+    margin:auto;
+    padding:40px 20px;
+    gap:25px;
+}
+.intro-box{
+    background:#E8F1FF;
+    padding:25px;
+    width:50%;
+    border-left:6px solid #003F87;
+    border-radius:10px;
+}
+.intro-box h2{
+    margin-bottom:10px;
+    color:#003F87;
+}
+.intro-img{
+    width:45%;
+}
+.intro-img img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* ========================= SECTIONS ========================= */
+.section-heading{
+    text-align:center;
+    margin-top:40px;
+    font-size:30px;
+    color:#003F87;
+    font-weight:700;
+}
+
+.content-section{
+    max-width:1150px;
+    margin:40px auto;
+    display:flex;
+    gap:30px;
+    padding:20px;
+}
+.content-text{
+    width:60%;
+    font-size:17px;
+    line-height:1.75;
+}
+.content-img{
+    width:40%;
+}
+.content-img img{
+    width:100%;
+    border-radius:10px;
+}
+.reverse{flex-direction:row-reverse;}
+
+/* ========================= FEATURE BOX ========================= */
+.feature-box{
+    max-width:1100px;
+    margin:40px auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.15);
+}
+.feature-title{
+    font-size:26px;
+    color:#003F87;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+/* ========================= FOOTER ========================= */
+footer{
+    background:#00072d;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:50px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========================= NAVBAR TOP ========================= -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+        <span id="usernameDisplay" class="user-name"></span>
+    </div>
+</nav>
+
+<!-- ========================= LOGO NAV ========================= -->
+<nav class="downnav">
+    <img src="image.png" class="logo">
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<!-- ========================= TITLE ========================= -->
+<div class="page-title">Classical Literature & Oral Traditions</div>
+
+<!-- ========================= INTRO ========================= -->
+<div class="intro-section reveal">
+    <div class="intro-box">
+        <h2>Introduction</h2>
+        <p>
+            Indian classical literature is one of the richest in the world, beginning with the Vedic hymns 
+            and expanding into poetry, drama, philosophy, and regional literary traditions. Before written
+            scripts became widespread, India preserved its knowledge through strong oral traditions that
+            carried culture across generations.
+        </p>
+    </div>
+
+    <div class="intro-img">
+        <img src="sai_images/5-2-1.avif">
+    </div>
+</div>
+
+<!-- ========================= SECTION 1 ========================= -->
+<h2 class="section-heading reveal">Vedic & Sanskrit Literature</h2>
+
+<div class="content-section reveal">
+    <div class="content-text">
+        <p>
+            The earliest Indian literature is found in the Vedas, Upanishads, and Brahmanas — ancient 
+            Sanskrit texts reflecting deep spiritual, philosophical, and scientific ideas. Later came 
+            classical works like Kalidasa’s dramas, Sanskrit poetry, and the epics <strong>Ramayana</strong> and 
+            <strong>Mahabharata</strong>, which influenced the culture, ethics, and stories of the subcontinent.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="sai_images/5-2-2.avif">
+    </div>
+</div>
+
+<!-- ========================= SECTION 2 ========================= -->
+<h2 class="section-heading reveal">Regional Literature & Oral Traditions</h2>
+
+<div class="content-section reverse reveal">
+    <div class="content-text">
+        <p>
+            India’s oral traditions include ballads, storytelling, folk songs, and devotional music.
+            From Tamil Sangam poetry to Hindi Bhakti verses, from Baul singers of Bengal to 
+            Harikatha and Villupattu storytellers — these traditions kept history and values alive.
+            Many were later written down as Indian scripts evolved.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="sai_images/5-2-3.avif">
+    </div>
+</div>
+
+<!-- ========================= FEATURE BOX ========================= -->
+<div class="feature-box reveal">
+    <h3 class="feature-title">Highlights of Indian Literature</h3>
+    <ul>
+        <li>Vedas & Upanishads — earliest spiritual and philosophical works.</li>
+        <li>Sangam Literature — ancient Tamil poetry with historic insights.</li>
+        <li>Bhakti & Sufi Poetry — devotional and mystical compositions.</li>
+        <li>Epics like Ramayana & Mahabharata shaped Indian ethics and culture.</li>
+        <li>Strong oral heritage kept traditions alive before scripts emerged.</li>
+    </ul>
+</div>
+
+<!-- ========================= FOOTER ========================= -->
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<!-- ========================= SCRIPT ========================= -->
+<script>
+let fontSize=100;
+function changeZoom(step){
+    fontSize+=step*10;
+    document.documentElement.style.fontSize=fontSize+"%";
+}
+function resetZoom(){
+    fontSize=100;
+    document.documentElement.style.fontSize="100%";
+}
+
+const username=localStorage.getItem("username");
+document.getElementById("usernameDisplay").textContent=username||"Login";
+
+function revealOnScroll(){
+    const elements=document.querySelectorAll('.reveal');
+    elements.forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight-100){
+            el.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll',revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>

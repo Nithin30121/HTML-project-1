@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ellora Caves – One Guide</title>
+
+<style>
+/* SAME CSS AS AJANTA PAGE (kept identical) */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#f4f6fb;color:#003A99;}
+
+.topnav{display:flex;align-items:center;background:#00072d;padding:12px 20px;gap:25px;}
+.topnav a{color:white;text-decoration:none;font-size:16px;}
+.right-side{margin-left:auto;display:flex;align-items:center;gap:20px;}
+.zoom-controls button{background:transparent;border:none;color:#ffd86b;font-size:20px;font-weight:bold;cursor:pointer;}
+
+.downnav{background:#16236c;padding:20px;display:flex;align-items:center;gap:20px;}
+.downnav h1{color:white;font-size:38px;}
+.logo{width:95px;}
+
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+.page-title{background:#003F87;color:white;padding:18px;text-align:center;font-size:28px;font-weight:600;}
+
+.intro-section{display:flex;justify-content:center;max-width:1150px;margin:auto;padding:40px 20px;gap:25px;}
+.intro-box{background:#E8F1FF;padding:25px;width:50%;border-left:6px solid #003F87;border-radius:10px;}
+.intro-box h2{color:#003F87;margin-bottom:10px;}
+.intro-img{width:45%;}
+.intro-img img{width:100%;border-radius:10px;}
+
+.section-heading{text-align:center;margin-top:40px;font-size:30px;color:#003F87;font-weight:700;}
+
+.content-section{max-width:1150px;margin:40px auto;display:flex;gap:30px;padding:20px;}
+.content-text{width:60%;font-size:17px;line-height:1.75;}
+.content-img{width:40%;}
+.content-img img{width:100%;border-radius:10px;}
+.reverse{flex-direction:row-reverse;}
+
+footer{background:#00072d;color:white;text-align:center;padding:18px;margin-top:50px;}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBARS SAME -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <div class="right-side">
+        <div class="zoom-controls"><button onclick="changeZoom(-1)">A-</button><button onclick="resetZoom()">A</button><button onclick="changeZoom(1)">A+</button></div>
+        <span id="usernameDisplay" class="user-name"></span>
+    </div>
+</nav>
+
+<nav class="downnav">
+    <img src="image.png" class="logo"><h1>ONE GUIDE</h1>
+</nav>
+
+<!-- PAGE -->
+<div class="page-title">Ellora Caves – Monument of Diversity</div>
+
+<div class="intro-section reveal">
+    <div class="intro-box">
+        <h2>Introduction to Ellora</h2>
+        <p>
+            The Ellora Caves in Maharashtra are a majestic blend of Hindu, Buddhist, and Jain architecture,
+            carved between the 6th and 10th centuries CE.
+        </p>
+        <p>
+            The crown jewel, Kailasa Temple (Cave 16), is the world’s largest monolithic rock-cut temple.
+        </p>
+    </div>
+
+    <div class="intro-img">
+        <img src="https://cdn.pixabay.com/photo/2016/04/09/04/36/buddhism-1317431_1280.jpg">
+    </div>
+</div>
+
+<h2 class="section-heading reveal">The Marvel of Kailasa Temple</h2>
+
+<div class="content-section reveal">
+    <div class="content-text">
+        <p>
+            Carved from a single rock from top to bottom, Kailasa Temple is an engineering miracle. It features 
+            towering pillars, intricate sculptures, and richly decorated mandapas.
+        </p>
+        <p>
+            The temple is dedicated to Lord Shiva and took decades to complete using only chisels and hammers.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2016/04/09/04/33/buddhism-1317426_1280.jpg">
+    </div>
+</div>
+
+<h2 class="section-heading reveal">Symbol of Harmony & Faith</h2>
+
+<div class="content-section reverse reveal">
+    <div class="content-text">
+        <p>
+            Ellora showcases India’s cultural harmony with caves belonging to three religions.  
+            It reflects the coexistence and respect among diverse traditions.
+        </p>
+        <p>
+            Today, Ellora stands as one of the greatest artistic achievements in world history.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2016/04/09/04/36/buddhism-1317431_1280.jpg">
+    </div>
+</div>
+
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<script>
+let fontSize=100;
+function changeZoom(step){fontSize+=step*10;document.documentElement.style.fontSize=fontSize+"%";}
+function resetZoom(){fontSize=100;document.documentElement.style.fontSize="100%";}
+function revealOnScroll(){document.querySelectorAll('.reveal').forEach(e=>{if(e.getBoundingClientRect().top<window.innerHeight-100)e.classList.add('active');});}
+window.addEventListener('scroll',revealOnScroll);revealOnScroll();
+document.getElementById("usernameDisplay").textContent=localStorage.getItem("username")||"Login";
+</script>
+
+</body>
+</html>

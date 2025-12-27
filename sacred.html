@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sacred Literature & Scriptures – Indian Culture</title>
+
+<style>
+/* GLOBAL */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#f4f6fb;color:#003A99;}
+
+/* NAVBAR */
+.topnav{
+    display:flex;align-items:center;
+    background:#00072d;padding:12px 20px;gap:25px;
+}
+.topnav a{color:white;text-decoration:none;font-size:16px;}
+.right-side{margin-left:auto;display:flex;align-items:center;gap:20px;}
+.zoom-controls button{
+    background:transparent;border:none;color:#ffd86b;
+    font-size:20px;font-weight:bold;cursor:pointer;
+}
+.zoom-controls button:hover{opacity:0.7;}
+.user-name{color:white;cursor:pointer;}
+
+/* SECOND NAV */
+.downnav{
+    background:#16236c;padding:20px;
+    display:flex;align-items:center;gap:20px;
+}
+.logo{width:95px;}
+.downnav h1{color:white;font-size:38px;}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.9s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+/* PAGE TITLE */
+.page-title{
+    background:#003F87;color:white;
+    padding:18px;text-align:center;
+    font-size:26px;font-weight:600;
+}
+
+/* INTRO SECTION */
+.intro-section{
+    display:flex;justify-content:center;
+    max-width:1150px;margin:auto;
+    padding:40px 20px;gap:25px;
+}
+.intro-box{
+    background:#E8F1FF;padding:25px;width:50%;
+    border-left:6px solid #003F87;border-radius:10px;
+}
+.intro-box h2{color:#003F87;margin-bottom:10px;}
+.intro-img{width:45%;}
+.intro-img img{width:100%;border-radius:10px;}
+
+/* SECTION HEADING */
+.section-heading{
+    text-align:center;margin-top:40px;
+    font-size:30px;color:#003F87;font-weight:700;
+}
+
+/* CONTENT SECTIONS */
+.content-section{
+    max-width:1150px;margin:40px auto;
+    display:flex;gap:30px;padding:20px;
+}
+.content-text{width:60%;font-size:17px;line-height:1.7;}
+.content-img{width:40%;}
+.content-img img{width:100%;border-radius:10px;}
+.reverse{flex-direction:row-reverse;}
+
+/* FEATURE BOX */
+.feature-box{
+    max-width:1100px;margin:40px auto;
+    background:white;padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.15);
+}
+.feature-title{
+    font-size:26px;color:#003F87;
+    margin-bottom:10px;font-weight:700;
+}
+
+/* FOOTER */
+footer{
+    background:#00072d;color:white;
+    text-align:center;padding:18px;
+    margin-top:50px;font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+        <span id="usernameDisplay" class="user-name"></span>
+    </div>
+</nav>
+
+<!-- LOGO NAV -->
+<nav class="downnav">
+    <img src="image.png" class="logo">
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<!-- PAGE TITLE -->
+<div class="page-title">Sacred Literature & Scriptures of India</div>
+
+<!-- INTRO SECTION -->
+<div class="intro-section reveal">
+    <div class="intro-box">
+        <h2>Introduction</h2>
+        <p>
+            India’s sacred literature is one of the oldest and most profound knowledge systems in the world. 
+            It includes spiritual, philosophical, poetic, and narrative traditions preserved for thousands of years.
+        </p>
+        <p>
+            The Vedas, Upanishads, epics like the Ramayana and Mahabharata, and devotional texts shaped the 
+            cultural and spiritual foundation of the nation.
+        </p>
+    </div>
+
+    <div class="intro-img">
+        <img src="sai_images/6-1-1.avif" alt="Sacred Texts">
+    </div>
+</div>
+
+<!-- SECTION 1 -->
+<h2 class="section-heading reveal">The Vedas – Foundations of Knowledge</h2>
+
+<div class="content-section reveal">
+    <div class="content-text">
+        <p>
+            The Vedas are the oldest and most authoritative scriptures of Hindu tradition. 
+            Composed in Sanskrit, they contain hymns, rituals, philosophy, and cosmic principles.
+        </p>
+        <ul>
+            <li><strong>Rig Veda</strong> – hymns and cosmic knowledge</li>
+            <li><strong>Sama Veda</strong> – melodies & chants</li>
+            <li><strong>Yajur Veda</strong> – rituals & ceremonies</li>
+            <li><strong>Atharva Veda</strong> – everyday wisdom, healing</li>
+        </ul>
+        <p>
+            The Vedas are considered the source of spiritual and scientific thought in ancient India.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="sai_images/6-1-2.avif">
+    </div>
+</div>
+
+<!-- SECTION 2 -->
+<h2 class="section-heading reveal">Epic Literature – Ramayana & Mahabharata</h2>
+
+<div class="content-section reverse reveal">
+    <div class="content-text">
+        <p>
+            India’s two great epics are more than stories—they are moral, political, and philosophical guides.
+        </p>
+        <ul>
+            <li><strong>Ramayana</strong> – story of Lord Rama, symbol of dharma and virtue</li>
+            <li><strong>Mahabharata</strong> – world’s longest epic containing the Bhagavad Gita</li>
+        </ul>
+        <p>
+            These timeless narratives continue to shape Indian values, culture, and beliefs across generations.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="sai_images/6-1-3.avif">
+    </div>
+</div>
+
+<!-- FEATURE BOX -->
+<div class="feature-box reveal">
+    <h3 class="feature-title">Other Sacred Texts</h3>
+    <ul>
+        <li><strong>Upanishads</strong> – spiritual dialogues on self & universe</li>
+        <li><strong>Puranas</strong> – myths, legends & cosmic cycles</li>
+        <li><strong>Bhakti Literature</strong> – devotional hymns of saints</li>
+    </ul>
+    <p>
+        Together, these scriptures represent the spiritual heart of India’s civilization.
+    </p>
+</div>
+
+<!-- FOOTER -->
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<!-- SCRIPT -->
+<script>
+let fontSize = 100;
+function changeZoom(step){fontSize += step * 10;document.documentElement.style.fontSize = fontSize + "%";}
+function resetZoom(){fontSize = 100;document.documentElement.style.fontSize = "100%";}
+
+document.getElementById("usernameDisplay").textContent = localStorage.getItem("username") || "Login";
+
+function revealOnScroll(){
+    document.querySelectorAll('.reveal').forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 100){
+            el.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>

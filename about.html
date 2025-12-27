@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Indian Culture</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #CFF7FA;
+            color: #003A99;
+            line-height: 1.7;
+        }
+
+        /* TOP NAV (same as home page) */
+        .topnav {
+            display: flex;
+            align-items: center;
+            background-color: #00072d;
+            padding: 12px 20px;
+            gap: 30px;
+        }
+
+        .topnav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .right-side {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .zoom-controls button {
+            background: transparent;
+            border: none;
+            color: #ffd86b;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .zoom-controls button:hover {
+            opacity: 0.7;
+        }
+
+        /* USER MENU */
+        .user-menu {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .user-name {
+            font-size: 16px;
+            padding: 6px 10px;
+            color: white;
+        }
+
+        /* DROPDOWN */
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: white;
+            top: 30px;
+            right: 0;
+            min-width: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 50;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: #003A99;
+            text-decoration: none;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .dropdown a:hover {
+            background: #eaf6ff;
+        }
+
+        .user-menu.open .dropdown {
+            display: block;
+        }
+
+        /* SECOND NAV (logo) */
+        .downnav {
+            display: flex;
+            align-items: center;
+            background-color: #16236c;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .downnav h1 {
+            color: white;
+            font-size: 40px;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(#0077B6aa, #003A99aa), url("heritage.jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 120px 60px;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 80px 60px;
+            background: white;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+        }
+
+        .section h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #005FBD;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #E8F9FF;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 6px solid #0077B6;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        }
+
+        .card h4 {
+            font-size: 20px;
+            color: #003A99;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #003A99;
+            padding: 25px;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP NAV -->
+    <nav class="topnav">
+        <a href="Coutline.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="right-side">
+            <div class="zoom-controls">
+                <button onclick="changeZoom(-1)">A-</button>
+                <button onclick="resetZoom()">A</button>
+                <button onclick="changeZoom(1)">A+</button>
+            </div>
+
+            <div class="user-menu">
+                <span id="usernameDisplay" class="user-name"></span>
+
+                <div id="userDropdown" class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="#" onclick="logoutUser()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGO NAV -->
+    <nav class="downnav">
+        <img src="image.png" class="logo">
+        <h1>ONE GUIDE</h1>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h2>Discover India's Timeless Culture</h2>
+        <p>
+            A digital journey through India’s vast cultural heritage — traditions, art, 
+            history, festivals, architecture, and the stories that shaped one of the world’s oldest civilizations.
+        </p>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="section">
+        <h3>About the Platform</h3>
+        <p>
+            India’s culture is a treasure that spans thousands of years, reflecting diversity, knowledge, 
+            traditions, and artistic brilliance. This platform was created to preserve, showcase, and celebrate 
+            the rich cultural heritage of India in a modern digital format.
+        </p>
+        <p>
+            From ancient manuscripts to traditional dance forms, from historic monuments to timeless philosophies — 
+            our goal is to make cultural knowledge accessible to everyone.
+        </p>
+    </div>
+
+    <!-- WHAT WE OFFER -->
+    <div class="section">
+        <h3>What We Offer</h3>
+
+        <div class="grid">
+            <div class="card">
+                <h4>Historical Archives</h4>
+                Explore curated content from India’s museums, libraries, and cultural institutions.
+            </div>
+
+            <div class="card">
+                <h4>Art & Architecture</h4>
+                Discover temples, forts, paintings, sculptures, and craftsmanship.
+            </div>
+
+            <div class="card">
+                <h4>Festivals & Traditions</h4>
+                Learn about the cultural significance behind India’s colorful festivals.
+            </div>
+
+            <div class="card">
+                <h4>Languages & Literature</h4>
+                Dive into classical texts, regional languages, poetry, and scripts.
+            </div>
+
+            <div class="card">
+                <h4>Digital Exhibitions</h4>
+                Experience immersive virtual showcases of cultural collections.
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Indian Culture Platform — Preserving the Past, Inspiring the Future.</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        /* ZOOM */
+        let fontSize = 100;
+        function changeZoom(step) {
+            fontSize += step * 10;
+            document.documentElement.style.fontSize = fontSize + "%";
+        }
+        function resetZoom() {
+            fontSize = 100;
+            document.documentElement.style.fontSize = "100%";
+        }
+
+        /* USERNAME + DROPDOWN */
+        const username = localStorage.getItem("username");
+        const usernameDisplay = document.getElementById("usernameDisplay");
+        const userMenu = document.querySelector(".user-menu");
+
+        if (username) {
+            usernameDisplay.textContent = username;
+        } else {
+            usernameDisplay.innerHTML =
+                '<a href="login.html" style="color:white;text-decoration:none;">Login</a>';
+        }
+
+        usernameDisplay.addEventListener("click", () => {
+            if (username) userMenu.classList.toggle("open");
+        });
+
+        function logoutUser() {
+            localStorage.removeItem("username");
+            window.location.href = "login.html";
+        }
+
+        document.addEventListener("click", function (event) {
+            if (!userMenu.contains(event.target)) {
+                userMenu.classList.remove("open");
+            }
+        });
+    </script>
+
+</body>
+</html>

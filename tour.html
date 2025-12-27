@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Indian Heritage – Virtual Tours & Videos</title>
+
+<style>
+/* ===========================
+   GLOBAL
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #E6F7FF;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    width: 100%;
+    background: linear-gradient(90deg, #003B73, #005A9C);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.navbar h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar a {
+    color: #AEEBF5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #004E89, #0077B6);
+    color: white;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ===========================
+   GRID
+=========================== */
+.grid {
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+.card {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-bottom: 2px solid #004E89;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h2 {
+    font-size: 22px;
+    color: #004E89;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 15px;
+    color: #003A66;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #AEEBF5;
+    color: #004E89;
+    font-size: 12px;
+    border-radius: 8px;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h1>INDIAN HERITAGE</h1>
+    <a href="Coutline.html">Home</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Videos</h1>
+    <p>Explore India’s monuments, history, and architecture through immersive videos.</p>
+</div>
+
+<!-- GRID -->
+<div class="grid">
+
+    <!-- CARD 1 -->
+    <a href="https://youtu.be/49HTIoCccDY" target="_blank" class="card">
+        <img src="https://i.ytimg.com/vi/49HTIoCccDY/maxresdefault.jpg" alt="Taj Mahal">
+        <div class="card-content">
+            <h2>Taj Mahal – Agra</h2>
+            <p>A virtual tour of the iconic Taj Mahal, showcasing its history and Mughal architecture.</p>
+            <span class="tag">Monument</span>
+            <span class="tag">UNESCO</span>
+        </div>
+    </a>
+
+    <!-- CARD 2 -->
+    <a href="https://youtu.be/WfeUedFk6GU?si=rbjGtPlILwdHByyf" target="_blank" class="card">
+        <img src="https://www.rstravelindia.com/blog/wp-content/uploads/2019/04/Red-Fort-Old-Delhi-India.jpg" alt="Red Fort">
+        <div class="card-content">
+            <h2>Red Fort – Delhi</h2>
+            <p>Explore the Red Fort and learn about India’s freedom struggle and Mughal legacy.</p>
+            <span class="tag">History</span>
+            <span class="tag">Delhi</span>
+        </div>
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="https://youtu.be/ZYXwVtbo8Zc?si=N396VyP45eJkIxzB" target="_blank" class="card">
+        <img src="https://th.bing.com/th/id/OIP.yurcXJwWt5CgaAwqwV7PZgHaEP?w=309&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Hampi">
+        <div class="card-content">
+            <h2>Hampi – Karnataka</h2>
+            <p>A breathtaking tour of Hampi, the ancient ruins of the Vijayanagara Empire.</p>
+            <span class="tag">Ancient</span>
+            <span class="tag">Architecture</span>
+        </div>
+    </a>
+
+    <!-- CARD 4 -->
+    <a href="https://youtu.be/GqYAggbOh9I?si=6b6nIAW0UUSZt6Wi" target="_blank" class="card">
+        <img src="https://th.bing.com/th/id/OIP.PgT9NSLESBlZBXS35FKvaQHaEc?w=171&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3" alt="Konark Temple">
+        <div class="card-content">
+            <h2>Konark Sun Temple</h2>
+            <p>Discover the Sun Temple of Konark, famous for its chariot-shaped structure.</p>
+            <span class="tag">Temple</span>
+            <span class="tag">Odisha</span>
+        </div>
+    </a>
+
+    <!-- CARD 5 -->
+    <a href="https://youtu.be/6SbRU946uF0?si=ZL3kBXrrkTJ4s1SO" target="_blank" class="card">
+        <img src="https://media.insider.in/image/upload/c_crop,g_custom/v1581057873/abz7qltocg06isgw3zhq.jpg" alt="Ajanta Ellora">
+        <div class="card-content">
+            <h2>Ajanta & Ellora Caves</h2>
+            <p>Rock-cut caves reflecting ancient Indian art, religion, and craftsmanship.</p>
+            <span class="tag">Caves</span>
+            <span class="tag">Heritage</span>
+        </div>
+    </a>
+
+    <!-- CARD 6 -->
+    <a href="https://youtu.be/2lUkBy4UgLQ?si=ei9-JzGQqLlgWk-V" target="_blank" class="card">
+        <img src="https://th.bing.com/th/id/OIP.3wTtGu09i6CFtOLe1N1gWAHaE8?w=212&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3" alt="Varanasi">
+        <div class="card-content">
+            <h2>Varanasi Ghats</h2>
+            <p>A spiritual tour of Varanasi, one of the oldest living cities in the world.</p>
+            <span class="tag">Spiritual</span>
+            <span class="tag">Culture</span>
+        </div>
+    </a>
+
+</div>
+
+</body>
+</html>

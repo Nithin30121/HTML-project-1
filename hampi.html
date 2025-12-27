@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hampi – South India Heritage</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#f4f6fb;color:#003A99;}
+
+.topnav{display:flex;align-items:center;background:#00072d;padding:12px 20px;gap:25px;}
+.topnav a{color:white;text-decoration:none;font-size:16px;}
+.right-side{margin-left:auto;display:flex;gap:20px;}
+.zoom-controls button{background:transparent;border:none;color:#ffd86b;font-size:20px;cursor:pointer;}
+
+.downnav{background:#16236c;padding:20px;display:flex;align-items:center;gap:20px;}
+.downnav h1{color:white;font-size:38px;}
+.logo{width:95px;}
+
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.9s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+.page-title{background:#003F87;color:white;padding:18px;text-align:center;
+font-size:26px;font-weight:600;}
+
+.intro-section{display:flex;justify-content:center;max-width:1150px;margin:auto;padding:40px 20px;gap:25px;}
+.intro-box{background:#E8F1FF;padding:25px;width:50%;border-left:6px solid #003F87;border-radius:10px;}
+.intro-img img{width:100%;border-radius:10px;}
+
+.section-heading{text-align:center;margin-top:40px;font-size:30px;font-weight:700;color:#003F87;}
+
+.content-section{max-width:1150px;margin:40px auto;display:flex;gap:30px;padding:20px;}
+.content-text{width:60%;line-height:1.7;font-size:17px;}
+.content-img img{width:100%;border-radius:10px;}
+.reverse{flex-direction:row-reverse;}
+
+footer{background:#00072d;color:white;text-align:center;padding:18px;margin-top:50px;}
+</style>
+</head>
+
+<body>
+
+<nav class="topnav">
+ <a href="Coutline.html">Home</a>
+ <a href="about.html">About</a>
+ <a href="contact.html">Contact</a>
+ <div class="right-side">
+     <div class="zoom-controls">
+         <button onclick="changeZoom(-1)">A-</button>
+         <button onclick="resetZoom()">A</button>
+         <button onclick="changeZoom(1)">A+</button>
+     </div>
+ </div>
+</nav>
+
+<nav class="downnav">
+ <img src="image.png" class="logo"/>
+ <h1>ONE GUIDE</h1>
+</nav>
+
+<div class="page-title">Hampi – Glory of the Vijayanagara Empire</div>
+
+<div class="intro-section reveal">
+ <div class="intro-box">
+     <h2>Introduction to Hampi</h2>
+     <p>
+         Hampi, located in Karnataka, is a UNESCO World Heritage Site and the ancient capital 
+         of the powerful Vijayanagara Empire. The city flourished in the 14th–16th centuries 
+         and was one of the richest and largest cities in the world.
+     </p>
+     <p>
+         Today, its ruins include temples, palaces, markets, and massive stone structures that 
+         tell the story of its majestic past.
+     </p>
+ </div>
+
+ <div class="intro-img">
+     <img src="https://cdn.pixabay.com/photo/2019/12/20/11/03/hampi-4708210_1280.jpg">
+ </div>
+</div>
+
+<h2 class="section-heading reveal">Architecture & Design</h2>
+
+<div class="content-section reveal">
+ <div class="content-text">
+     <p>
+         The architecture of Hampi blends Dravidian style with intricate carvings. 
+         Iconic monuments include the Virupaksha Temple, Vittala Temple with its musical pillars, 
+         and the famous Stone Chariot.
+     </p>
+     <p>
+         Granite rock formations, massive boulders, and stunning temple complexes make Hampi 
+         one of the most unique landscapes in India.
+     </p>
+ </div>
+
+ <div class="content-img">
+     <img src="https://cdn.pixabay.com/photo/2018/06/09/13/10/hampi-3464359_1280.jpg">
+ </div>
+</div>
+
+<h2 class="section-heading reveal">Historical Significance</h2>
+
+<div class="content-section reverse reveal">
+ <div class="content-text">
+     <p>
+         Hampi was once the cultural and economic heart of South India.  
+         It attracted traders from Persia, Portugal, and the Middle East.
+     </p>
+     <p>
+         After the Battle of Talikota in 1565, the city was destroyed, but its ruins remain 
+         a magnificent reminder of its glorious past.
+     </p>
+ </div>
+
+ <div class="content-img">
+     <img src="https://cdn.pixabay.com/photo/2018/06/09/13/10/hampi-3464359_1280.jpg">
+ </div>
+</div>
+
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<script>
+let fontSize=100;
+
+function changeZoom(step){fontSize+=step*10;document.documentElement.style.fontSize=fontSize+"%";}
+function resetZoom(){fontSize=100;document.documentElement.style.fontSize="100%";}
+
+function revealOnScroll(){
+ document.querySelectorAll('.reveal').forEach(el=>{
+     if(el.getBoundingClientRect().top<window.innerHeight-100){
+         el.classList.add("active");
+     }
+ });
+}
+
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Indian Culture</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #CFF7FA;
+            color: #003A99;
+        }
+
+        /* TOP NAV BAR (SAME AS HOME PAGE) */
+        .topnav {
+            display: flex;
+            align-items: center;
+            background-color: #00072d;
+            padding: 12px 20px;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .topnav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .right-side {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .zoom-controls button {
+            background: transparent;
+            border: none;
+            color: #ffd86b;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .zoom-controls button:hover {
+            opacity: 0.7;
+        }
+
+        #usernameDisplay {
+            color: white;
+            font-size: 16px;
+        }
+
+        /* LOGO NAV */
+        .downnav {
+            display: flex;
+            align-items: center;
+            background-color: #16236c;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .downnav h1 {
+            color: white;
+            font-size: 40px;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-section h2 {
+            font-size: 35px;
+            font-weight: 700;
+            color: #005FBD;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* CONTACT INFO */
+        .info-box {
+            background: #E8F9FF;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .info-box h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            margin-bottom: 15px;
+        }
+
+        /* FORM */
+        .contact-form label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #59D8F0;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #009FD1;
+            box-shadow: 0 0 5px #9EEBF5;
+        }
+
+        .contact-form button {
+            background: #0077B6;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background: #005FBD;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #003A99;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* USER MENU */
+.user-menu {
+    position: relative;
+    color: white;
+    cursor: pointer;
+}
+
+.user-name {
+    font-size: 16px;
+    padding: 6px 10px;
+    color: white;
+    border-radius: 6px;
+}
+
+.user-name:hover {
+    opacity: 0.8;
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #ffffff;
+    top: 30px;
+    right: 0;
+    min-width: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 50;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #003A99;
+    text-decoration: none;
+    font-size: 15px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.dropdown a:hover {
+    background: #eaf6ff;
+}
+
+/* SHOW DROPDOWN */
+.user-menu.open .dropdown {
+    display: block;
+}
+
+    </style>
+</head>
+<script>
+    let fontSize = 100;
+
+    function changeZoom(step) {
+        fontSize += step * 10;
+        document.documentElement.style.fontSize = fontSize + "%";
+    }
+    function resetZoom() {
+        fontSize = 100;
+        document.documentElement.style.fontSize = "100%";
+    }
+
+    // Username & Login handling
+    const username = localStorage.getItem("username");
+    const usernameDisplay = document.getElementById("usernameDisplay");
+    const userMenu = document.querySelector(".user-menu");
+
+    if (username) {
+        usernameDisplay.textContent = username;   // Show username
+    } else {
+        usernameDisplay.innerHTML = '<a href="login.html" style="color:white; text-decoration:none;">Login</a>';
+    }
+
+    // Toggle dropdown
+    usernameDisplay.addEventListener("click", () => {
+        if (username) {
+            userMenu.classList.toggle("open");
+        }
+    });
+
+    // Logout function
+    function logoutUser() {
+        localStorage.removeItem("username");
+        window.location.href = "login.html";
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function(event) {
+        if (!userMenu.contains(event.target)) {
+            userMenu.classList.remove("open");
+        }
+    });
+</script>
+
+
+<body>
+ <nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+
+        <!-- Zoom buttons -->
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+
+        <!-- USER DROPDOWN -->
+        <div class="user-menu">
+            <span id="usernameDisplay" class="user-name"></span>
+
+            <!-- DROPDOWN -->
+            <div id="userDropdown" class="dropdown">
+                <a href="profile.html">Profile</a>
+                <a href="#" onclick="logoutUser()">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- CONTACT PAGE -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions or suggestions? We'd love to hear from you.</p>
+
+        <div class="contact-container">
+
+            <!-- LEFT SIDE -->
+            <div class="info-box">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> support@indianculture.org</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Address:</strong> Ministry of Culture, New Delhi, India</p>
+                <p>You can reach us anytime for help, feedback, or cultural information.</p>
+            </div>
+
+            <!-- RIGHT SIDE - FORM -->
+            <div class="contact-form">
+                <form>
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+
+                    <label>Your Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+
+                    <label>Your Message</label>
+                    <textarea rows="5" placeholder="Write your message..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Indian Culture Platform — Preserving the Past, Inspiring the Future.
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // Font Zoom
+        let fontSize = 100;
+        function changeZoom(step) {
+            fontSize += step * 10;
+            document.documentElement.style.fontSize = fontSize + "%";
+        }
+        function resetZoom() {
+            fontSize = 100;
+            document.documentElement.style.fontSize = "100%";
+        }
+
+        // USERNAME SHOW
+        const username = localStorage.getItem("username");
+        const usernameDisplay = document.getElementById("usernameDisplay");
+
+        if (username) {
+            usernameDisplay.textContent = username;
+        } else {
+            usernameDisplay.innerHTML = '<a href="login.html" style="color:white;text-decoration:none;">Login</a>';
+        }
+    </script>
+
+</body>
+
+</html>

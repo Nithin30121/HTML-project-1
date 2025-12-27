@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Register</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CFF7FA;
+    background-image: url("pattern.png");
+    background-repeat: repeat;
+    background-size: 260px;
+}
+
+.register-box {
+    width: 400px;
+    background: rgba(255,255,255,0.92);
+    padding: 28px;
+    border-radius: 16px;
+    border: 4px solid #0063B2;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.18);
+    text-align: center;
+}
+
+/* TITLE */
+.register-box h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0077B6;
+    margin-bottom: 10px;
+}
+
+.decor-line {
+    width: 75%;
+    height: 3px;
+    background: #0077B6;
+    margin: 0 auto 18px;
+    border-radius: 5px;
+}
+
+/* INPUT FIELDS */
+.input-group {
+    text-align: left;
+    margin-bottom: 14px;
+}
+
+.input-group label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #003A99;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 13px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 2px solid #8DE6FF;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #0063B2;
+    box-shadow: 0 0 5px #9EEBF5;
+}
+
+/* REGISTER BUTTON */
+.register-btn {
+    width: 100%;
+    background: #000A6E;
+    color: #FFD447;
+    border: none;
+    padding: 13px;
+    font-size: 19px;
+    font-weight: 700;
+    border-radius: 8px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: #00148a;
+}
+
+/* BACK TO LOGIN */
+.back-login {
+    display: block;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #003A99;
+    text-decoration: none;
+}
+.back-login:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-box">
+    <h2>Create Account</h2>
+    <div class="decor-line"></div>
+
+    <form onsubmit="registerUser(event)">
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Choose a username" required />
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Create a password" required />
+        </div>
+
+        <div class="input-group">
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required />
+        </div>
+
+        <button type="submit" class="register-btn">Register</button>
+
+        <a href="login.html" class="back-login">Back to Login</a>
+
+    </form>
+</div>
+
+<script>
+function registerUser(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("fullname").value;
+    const email = document.getElementById("email").value;
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    const confirm = document.getElementById("confirmPassword").value;
+
+    if (pass !== confirm) {
+        alert("❌ Passwords do not match!");
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+
+    // CHECK IF USER OR EMAIL EXISTS
+    if (users.some(u => u.username === user)) {
+        alert("⚠ Username already taken! Try another.");
+        return;
+    }
+    if (users.some(u => u.email === email)) {
+        alert("⚠ Email already registered! Try logging in.");
+        return;
+    }
+
+    users.push({ fullName: name, email: email, username: user, password: pass });
+    localStorage.setItem("registeredUsers", JSON.stringify(users));
+
+    alert("✅ Registration Successful!");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

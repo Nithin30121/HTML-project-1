@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Panel – One Guide</title>
+
+<style>
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+    color: #003A99;
+}
+
+/* TOP NAV */
+.topnav {
+    display: flex;
+    align-items: center;
+    background-color: #00072d;
+    padding: 12px 20px;
+    gap: 25px;
+}
+.topnav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.right-side {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.zoom-controls button {
+    background: transparent;
+    border: none;
+    color: #ffd86b;
+    font-size: 20px;
+    cursor: pointer;
+}
+.user-name {
+    color: white;
+    cursor: pointer;
+}
+
+/* LOGO NAV */
+.downnav {
+    background-color: #16236c;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.downnav h1 {
+    color: white;
+    font-size: 38px;
+}
+.logo {
+    width: 95px;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* PAGE TITLE */
+.page-title {
+    background: #003F87;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* SECTION HEADERS */
+.section-header {
+    font-size: 26px;
+    color: #003F87;
+    font-weight: 700;
+    margin: 40px auto 10px auto;
+    width: 90%;
+}
+
+/* GRID LAYOUT */
+.grid {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.admin-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.admin-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #003A99;
+}
+
+.admin-card p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+    background: #00072d;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+
+        <span id="usernameDisplay" class="user-name"></span>
+    </div>
+</nav>
+
+<!-- LOGO NAV -->
+<nav class="downnav">
+    <img src="image.png" class="logo" />
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<!-- TITLE -->
+<div class="page-title reveal">Admin Control Center</div>
+
+<!-- CONTENT MANAGEMENT -->
+<h2 class="section-header reveal">🔷 Content Management</h2>
+
+<div class="grid reveal">
+    <div class="admin-card">
+        <h3>📄 Manage Pages</h3>
+        <p>Edit, remove, and update all major website pages.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>📚 Manage Topics</h3>
+        <p>Add or modify cultural topics, categories & sections.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>🖼 Media Library</h3>
+        <p>Upload, replace, and organize all images.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>🔍 Content Accuracy</h3>
+        <p>Check for errors, outdated info, and inconsistencies.</p>
+    </div>
+</div>
+
+<!-- USER MANAGEMENT -->
+<h2 class="section-header reveal">🔷 User Management</h2>
+
+<div class="grid reveal">
+    <div class="admin-card">
+        <h3>👤 User Accounts</h3>
+        <p>View users, reset passwords, and manage access.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>💬 User Comments</h3>
+        <p>Approve, delete, or respond to user feedback.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>📊 Activity Logs</h3>
+        <p>Track user interactions and website usage patterns.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>🚫 Reports & Flags</h3>
+        <p>Review and act on inappropriate or incorrect content.</p>
+    </div>
+</div>
+
+<!-- ACCURACY / QUALITY -->
+<h2 class="section-header reveal">🔷 Accuracy & Quality Tools</h2>
+
+<div class="grid reveal">
+    <div class="admin-card">
+        <h3>✔ Validation Tools</h3>
+        <p>Check missing images, broken links, and formatting.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>🔄 Update Checker</h3>
+        <p>Identify older content that needs revisions.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>🧠 Knowledge Verification</h3>
+        <p>AI-assisted cross-checking of cultural facts.</p>
+    </div>
+
+    <div class="admin-card">
+        <h3>🛡 Security Monitor</h3>
+        <p>Monitor failed logins and suspicious activity.</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 One Guide. Admin Panel.
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+let fontSize = 100;
+function changeZoom(step) {
+    fontSize += step * 10;
+    document.documentElement.style.fontSize = fontSize + "%";
+}
+function resetZoom() {
+    fontSize = 100;
+    document.documentElement.style.fontSize = "100%";
+}
+
+const username = localStorage.getItem("username");
+document.getElementById("usernameDisplay").textContent = username || "Admin";
+
+function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+    reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>

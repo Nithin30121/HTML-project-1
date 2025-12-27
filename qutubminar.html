@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Qutub Minar – Northern India Heritage</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#f4f6fb;color:#003A99;}
+
+.topnav{display:flex;align-items:center;background:#00072d;padding:12px 20px;gap:25px;}
+.topnav a{color:white;text-decoration:none;font-size:16px;}
+.right-side{margin-left:auto;display:flex;gap:20px;}
+.zoom-controls button{background:transparent;border:none;color:#ffd86b;font-size:20px;cursor:pointer;}
+
+.downnav{background:#16236c;padding:20px;display:flex;align-items:center;gap:20px;}
+.downnav h1{color:white;font-size:38px;}
+.logo{width:95px;}
+
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.9s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+.page-title{background:#003F87;color:white;padding:18px;text-align:center;
+font-size:26px;font-weight:600;}
+
+.intro-section{display:flex;justify-content:center;max-width:1150px;margin:auto;padding:40px 20px;gap:25px;}
+.intro-box{background:#E8F1FF;padding:25px;width:50%;border-left:6px solid #003F87;border-radius:10px;}
+.intro-box h2{margin-bottom:10px;}
+.intro-img img{width:100%;border-radius:10px;}
+
+.section-heading{text-align:center;margin-top:40px;font-size:30px;font-weight:700;color:#003F87;}
+
+.content-section{max-width:1150px;margin:40px auto;display:flex;gap:30px;padding:20px;}
+.content-text{width:60%;line-height:1.7;font-size:17px;}
+.content-img img{width:100%;border-radius:10px;}
+.reverse{flex-direction:row-reverse;}
+
+footer{background:#00072d;color:white;text-align:center;padding:18px;margin-top:50px;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+    </div>
+</nav>
+
+<nav class="downnav">
+    <img src="image.png" class="logo" />
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<div class="page-title">Qutub Minar – Ancient Victory Tower</div>
+
+<div class="intro-section reveal">
+    <div class="intro-box">
+        <h2>Introduction</h2>
+        <p>
+            Qutub Minar, located in Delhi, is a 73-meter tall UNESCO World Heritage Site.
+            Built in 1193 by Qutb-ud-din Aibak, it marks the beginning of Muslim rule in India.
+        </p>
+        <p>
+            The minar is known for its stunning Indo-Islamic architecture and remains one of India’s most visited landmarks.
+        </p>
+    </div>
+
+    <div class="intro-img">
+        <img src="https://cdn.pixabay.com/photo/2018/06/17/21/08/qutb-minar-3481425_1280.jpg">
+    </div>
+</div>
+
+<h2 class="section-heading reveal">Architecture</h2>
+
+<div class="content-section reveal">
+    <div class="content-text">
+        <p>
+            Qutub Minar is constructed using red sandstone and marble.  
+            It consists of five tapering storeys, with balconies featuring intricate carvings.
+        </p>
+        <p>
+            Its walls contain detailed Arabic and Brahmi inscriptions, making it an important cultural record.
+        </p>
+    </div>
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2018/06/22/20/07/qutb-minar-3491558_1280.jpg">
+    </div>
+</div>
+
+<h2 class="section-heading reveal">Historical Importance</h2>
+
+<div class="content-section reverse reveal">
+    <div class="content-text">
+        <p>
+            The tower stands within the Qutub complex, which also includes the Iron Pillar,
+            known for its rust-resistant metallurgy.
+        </p>
+        <p>
+            Qutub Minar symbolizes the rise of the Delhi Sultanate and remains a testament
+            to India’s medieval architectural brilliance.
+        </p>
+    </div>
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2013/07/25/11/59/qutub-166958_1280.jpg">
+    </div>
+</div>
+
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<script>
+let fontSize=100;
+function changeZoom(step){fontSize+=step*10;document.documentElement.style.fontSize=fontSize+"%";}
+function resetZoom(){fontSize=100;document.documentElement.style.fontSize="100%";}
+function revealOnScroll(){
+    document.querySelectorAll('.reveal').forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight-100) el.classList.add('active');
+    });
+}
+window.addEventListener('scroll',revealOnScroll);revealOnScroll();
+</script>
+
+</body>
+</html>

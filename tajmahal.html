@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Taj Mahal – Northern India Heritage</title>
+
+<style>
+/* GLOBAL */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#f4f6fb;color:#003A99;}
+
+/* NAVBAR */
+.topnav{
+    display:flex;align-items:center;background:#00072d;padding:12px 20px;gap:25px;
+}
+.topnav a{color:white;text-decoration:none;font-size:16px;}
+.right-side{margin-left:auto;display:flex;gap:20px;}
+.zoom-controls button{
+    background:transparent;border:none;color:#ffd86b;font-size:20px;cursor:pointer;
+}
+
+/* SECOND NAV */
+.downnav{
+    background:#16236c;padding:20px;display:flex;align-items:center;gap:20px;
+}
+.downnav h1{color:white;font-size:38px;}
+.logo{width:95px;}
+
+/* SCROLL ANIMATION */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.9s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+/* PAGE TITLE */
+.page-title{
+    background:#003F87;color:white;padding:18px;text-align:center;
+    font-size:26px;font-weight:600;
+}
+
+/* INTRO */
+.intro-section{
+    display:flex;justify-content:center;max-width:1150px;margin:auto;padding:40px 20px;gap:25px;
+}
+.intro-box{
+    background:#E8F1FF;padding:25px;width:50%;border-left:6px solid #003F87;border-radius:10px;
+}
+.intro-box h2{margin-bottom:10px;}
+.intro-img img{width:100%;border-radius:10px;}
+
+/* SECTIONS */
+.section-heading{
+    text-align:center;margin-top:40px;font-size:30px;font-weight:700;color:#003F87;
+}
+.content-section{
+    max-width:1150px;margin:40px auto;display:flex;gap:30px;padding:20px;
+}
+.content-text{width:60%;line-height:1.7;font-size:17px;}
+.content-img img{width:100%;border-radius:10px;}
+.reverse{flex-direction:row-reverse;}
+
+/* FOOTER */
+footer{
+    background:#00072d;color:white;text-align:center;padding:18px;margin-top:50px;font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+    </div>
+</nav>
+
+<!-- LOGO NAV -->
+<nav class="downnav">
+    <img src="image.png" class="logo" />
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<div class="page-title">Taj Mahal – Jewel of Northern India</div>
+
+<!-- INTRO -->
+<div class="intro-section reveal">
+    <div class="intro-box">
+        <h2>Introduction</h2>
+        <p>
+            The Taj Mahal, located in Agra, is one of the most iconic monuments in the world.
+            Built by Emperor Shah Jahan in memory of his wife Mumtaz Mahal, it stands as a symbol 
+            of eternal love and Mughal architectural mastery.
+        </p>
+        <p>
+            Made entirely of white marble, it attracts millions of visitors every year and is 
+            considered one of the New Seven Wonders of the World.
+        </p>
+    </div>
+
+    <div class="intro-img">
+        <img src="https://cdn.pixabay.com/photo/2019/04/10/17/51/agra-4117671_1280.jpg">
+    </div>
+</div>
+
+<h2 class="section-heading reveal">Architecture & Design</h2>
+
+<div class="content-section reveal">
+    <div class="content-text">
+        <p>
+            The Taj Mahal represents the finest Mughal architecture, blending Persian, Indian, 
+            and Islamic styles. Its symmetrical layout, intricate carvings, inlay work, and 
+            calligraphy make it a masterpiece.
+        </p>
+        <p>
+            The central dome rises 240 feet high and is surrounded by four minarets, making the 
+            structure visually stunning from every angle.
+        </p>
+    </div>
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2020/01/08/07/53/architecture-4749511_1280.jpg">
+    </div>
+</div>
+
+<h2 class="section-heading reveal">History & Legacy</h2>
+
+<div class="content-section reverse reveal">
+    <div class="content-text">
+        <p>
+            Construction began in 1632 and took nearly 22 years, involving thousands of artisans. 
+            Today, the Taj Mahal is a UNESCO World Heritage Site and a global symbol of beauty.
+        </p>
+    </div>
+
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2019/03/12/20/19/india-4051753_1280.jpg">
+    </div>
+</div>
+
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<script>
+let fontSize=100;
+function changeZoom(step){fontSize+=step*10;document.documentElement.style.fontSize=fontSize+"%";}
+function resetZoom(){fontSize=100;document.documentElement.style.fontSize="100%";}
+function revealOnScroll(){
+    document.querySelectorAll('.reveal').forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight-100) el.classList.add('active');
+    });
+}
+window.addEventListener('scroll',revealOnScroll);revealOnScroll();
+</script>
+
+</body>
+</html>

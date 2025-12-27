@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Indian Culture – Influencers & Podcasts</title>
+
+<style>
+/* ===========================
+   GLOBAL
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #E6F7FF;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    width: 100%;
+    background: linear-gradient(90deg, #003B73, #005A9C);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.navbar h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar a {
+    color: #AEEBF5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #004E89, #0077B6);
+    color: white;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ===========================
+   GRID
+=========================== */
+.grid {
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+.card {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-bottom: 2px solid #004E89;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h2 {
+    font-size: 22px;
+    color: #004E89;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 15px;
+    color: #003A66;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #AEEBF5;
+    color: #004E89;
+    font-size: 12px;
+    border-radius: 8px;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h1>INDIAN CULTURE</h1>
+    <a href="Coutline.html">Home</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Influencers & Podcasts of Indian Culture</h1>
+    <p>Discover India’s traditions, history, and modern culture through digital voices.</p>
+</div>
+
+<!-- GRID -->
+<div class="grid">
+
+    <!-- CARD 1 -->
+    <a href="https://youtu.be/byRsgbhXg_8?si=ZLa2rbV4dtCr5156" target="_blank" class="card">
+        <img src="https://th.bing.com/th/id/OIP.WyWu_KToQ0pzzyF_8nu2tAHaEK?w=331&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Dhruv Rathee">
+        <div class="card-content">
+            <h2>Dhruv Rathee</h2>
+            <p>Explains Indian society, history, politics, and social issues in a simple and engaging way.</p>
+            <span class="tag">Education</span>
+            <span class="tag">Society</span>
+        </div>
+    </a>
+
+    <!-- CARD 2 -->
+    <a href="https://youtu.be/FRTpI2Gu1KA?si=-klkfWaSRXgScIDn" target="_blank" class="card">
+        <img src="https://th.bing.com/th/id/OIP.vINQ2XyhBaALKQa3CSN8_gHaEK?w=298&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="BeerBiceps">
+        <div class="card-content">
+            <h2>The Ranveer Show</h2>
+            <p>A popular podcast featuring conversations on Indian culture, spirituality, and success stories.</p>
+            <span class="tag">Podcast</span>
+            <span class="tag">Spirituality</span>
+        </div>
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="https://youtu.be/YBuB9NukCxE" target="_blank" class="card">
+        <img src="https://i.ytimg.com/vi/YBuB9NukCxE/maxresdefault.jpg" alt="Abhi and Niyu">
+        <div class="card-content">
+            <h2>Abhi & Niyu</h2>
+            <p>Focus on positive storytelling about India, its people, heritage, and social change.</p>
+            <span class="tag">Positive India</span>
+            <span class="tag">Stories</span>
+        </div>
+    </a>
+
+    <!-- CARD 4 -->
+    <a href="https://youtu.be/MScaMLZq9-U?si=RwC6ovYQXlQ06R1x" target="_blank" class="card">
+        <img src="https://i.ytimg.com/vi/MScaMLZq9-U/maxresdefault.jpg" alt="Indian Podcasts">
+        <div class="card-content">
+            <h2>Indian Podcasts</h2>
+            <p>Short clips discussing Indian culture, mythology, history, and modern thinking.</p>
+            <span class="tag">Culture</span>
+            <span class="tag">Talks</span>
+        </div>
+    </a>
+
+    <!-- CARD 5 -->
+    <a href="https://youtu.be/-KXT_T097BI?si=rxFAxVrsFSimyNJg" target="_blank" class="card">
+        <img src="https://i.ytimg.com/vi/-KXT_T097BI/maxresdefault.jpg" alt="Prakhar ke Pravachan">
+        <div class="card-content">
+            <h2>Prakhar ke Pravachan</h2>
+            <p>Deep conversations on Indian philosophy, society, and modern youth mindset.</p>
+            <span class="tag">Philosophy</span>
+            <span class="tag">Youth</span>
+        </div>
+    </a>
+
+    <!-- CARD 6 -->
+    <a href="https://youtu.be/jMq1ZmGRyEI?si=bB9uUoh11N77iSfs" target="_blank" class="card">
+        <img src="https://i.ytimg.com/vi/jMq1ZmGRyEI/maxresdefault.jpg" alt="Indian Storytelling">
+        <div class="card-content">
+            <h2>Indian Storytelling</h2>
+            <p>Stories, interviews, and discussions that reflect India’s cultural diversity.</p>
+            <span class="tag">Stories</span>
+            <span class="tag">Diversity</span>
+        </div>
+    </a>
+
+</div>
+
+</body>
+</html>

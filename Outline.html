@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .topnav {
+        display: flex;
+        background-color: #00072D;
+        padding: 10px;
+    }
+    .topnav a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .downnav {
+        display: flex;
+        background-color: #16236c;
+        padding: 30px;
+    }
+    .downnav a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .downnav a:hover {
+        background-color: #ddd;
+        color: black;
+       position: relative;
+    }
+   
+    .img {
+        height:150px; 
+        width:150px;
+        position:absolute;top: 10px; left:40px;
+    }
+    .logo {
+        height:120px; 
+        width:120px;
+        margin-right: 20px;
+        margin-top: -15px;
+    }
+    h1 {
+        color: #ffffff;
+        font-size: 40px;
+        margin: auto;
+        margin-left:-25px;
+    }  
+  .hero {
+  width: 100%;
+  height: 90vh;
+  background-image: url('atharva-tulsi-XQKd1UN7gUU-unsplash.jpg');
+  background-size: cover;
+  background-position:top ;
+}
+footer {
+    background-color: #00072D;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  background-color: #f0f0f0;
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.card{
+  width:325px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+  margin:20px;
+}
+.card img{
+  width:100%;
+  height: auto;
+}
+
+.card-content{
+  padding:16px;
+}
+
+.card-content h3{
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.card-content a {
+  color: #000000;
+  text-decoration: none; /* optional, removes underline */
+}
+
+.Awarness{
+  text-align:center;
+  position:absolute;
+  top:135%;
+  left: 27%;
+
+
+}
+.headingheri{
+   text-align:center;
+  position:absolute;
+  top:215%;
+  left: 44%;
+}
+.Historicplace{
+     text-align:center;
+  position:absolute;
+  top:299%;
+  left: 38%;
+
+}
+.Login{
+  position:absolute;
+  top: 2%;
+  left:90%;
+}
+
+
+</style>
+<body>
+    <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a> 
+        <a href="contact.html">Contact</a>
+        <a href="Login" class="Login">Login</a>
+    </nav>
+    <nav class="downnav">
+          <img src="image.png" alt="Dont look here " class="logo">
+        <h1>ONE GUIDE</h1>
+    </nav>
+    <nav class="Thirdnav">
+    </nav>
+   <div class="hero"> </div>
+    <main>
+    <p>
+      This is your main content area. Add whatever you want here — text, images, cards, sections, etc.
+    </p><br>
+
+
+    <div class="Awarness">
+    <h1 style="color: #000000;">AWARNESS OF INDIAN CULTURE</h1>
+    </div>
+    <!-- first 3 cards abt awarness -->
+  <div class="card-container">
+  <div class="card">
+    <a href="firstcard.html" class="bhk">
+    <img src="philosophy.png">
+    <div class="card-content">
+      <a href="firstcard.html" class="bhk">
+      <h3>PHILOSOPHY AND CULTURE </h3>
+      <p>The six philosophies of India, also known as the Shatdarshanas, are the orthodox schools of Hindu thought that accept the authority of the Vedas</p>
+    </div>
+  </div>
+  
+
+   <div class="card">
+    <a href="secondcard.html" class="btn">
+       <img src="festival.png">
+     <div class="card-content">
+       <a href="secondcard.html" class="btn">
+        <h3>FESTIVALS</h3>
+        <p>India celebrates a wide variety of festivals throughout the year, with some of the most prominent being Diwali, Holi, Navratri, Durga Puja, and Ganesh Chaturthi</p>
+           
+    </div>
+  </div>
+
+    <div class="card">
+      <a href="thirdcard.html" class="btn">
+       <img src="languages.png">
+     <div class="card-content">
+      <a href="thirdcard.html" class="btn">
+        <h3>LANGUAGES</h3>
+        <p>According to the Census of India of 2001, India has 122 major languages and 1599 other languages.</p>
+           
+    </div>
+  </div>
+</div>
+<!-- first 3 cards abt awarness -->
+<br><br>
+
+<div class="headingheri">
+<h1 style="color:#000000;">HERITAGE</h1>
+ </div>
+<!-- Second 3 cards abt heritage -->
+ <div class="card-container">
+  <div class="card">
+    <a href="fouthcard.html" class="btn">
+    <img src="scientific.png">
+    <div class="card-content">
+      <a href="fouthcard.html" class="btn">
+      <h3>SCIENTIFIC HERITAGE </h3>
+      <p>Indian scientific heritage includes significant contributions in mathematics, astronomy, and medicine, with early concepts of zero and decimal systems. </p>
+      
+    </div>
+  </div>
+   <div class="card">
+    <a href="fifthcard.html" class="btn">
+       <img src="linguis.png">   
+     <div class="card-content">
+      <a href="fifthcard.html" class="btn">
+        <h3>LINNGUISTIC HERITAGE</h3>
+        <p>India's linguistic heritage is a complex and diverse tapestry, characterized by numerous languages, dialects, and a rich history of linguistic evolution</p>
+        
+    </div>
+  </div>
+
+    <div class="card">
+      <a href="sixthcard.html" class="btn">
+       <img src="spir.png">
+     <div class="card-content">
+      <a href="sixthcard.html" class="btn">
+        <h3>SPIRITUAL HERITAGE</h3>
+        <p>The Spiritual Heritage of India is a brief history of the philosophy of a country that has never distinguished philosophy from religion.a</p>
+    </div>
+  </div>
+</div>
+<!-- Second 3 cards abt awarness -->
+ <br><br>
+<!-- Third 3 cards abt Historic places -->
+  <div class="Historicplace">
+    <h1 style="color: #000000;">HISTORIC PLACES</h1>
+    </div>
+
+
+ <div class="card-container">
+  <div class="card">
+     <a href="seventhcard.html" class="btn">
+    <img src="westrenind.png">
+    <div class="card-content">
+       <a href="seventhcard.html" class="btn">
+      <h3>WESTREN INDIA</h3>
+      <p>Western India is home to magnificent historic sites like the Ajanta and Ellora Caves, showcasing ancient rock-cut architecture and Buddhist art.</p>
+    
+    </div>
+  </div>
+
+   <div class="card">
+     <a href="eightcard.html" class="btn">
+       <img src="northindia.png">
+     <div class="card-content">
+       <a href="eightcard.html" class="btn">
+        <h3>NORTHREN INDIA</h3>
+        <p>Northern India boasts iconic monuments like the Taj Mahal and Red Fort, symbolizing Mughal grandeur and architectural brilliance.</p>
+    </div>
+  </div>
+
+    <div class="card">
+      <a href="ninethcard.html" class="btn">
+       <img src="southerenind.png">
+     <div class="card-content">
+      <a href="ninethcard.html" class="btn">
+        <h3>SOUTHEREN INDIA</h3>
+        <p>Southern India is rich with heritage sites like Hampi and the Meenakshi Temple, showcasing Dravidian architecture and ancient empire glory.</p>
+    </div>
+  </div>
+</div>
+<!-- Third 3 cards abt awarness -->
+
+
+    <footer>
+     2024 One Guide. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>

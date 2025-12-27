@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meenakshi Temple – South India Heritage</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#f4f6fb;color:#003A99;}
+
+.topnav{display:flex;align-items:center;background:#00072d;padding:12px 20px;gap:25px;}
+.topnav a{color:white;text-decoration:none;font-size:16px;}
+.right-side{margin-left:auto;display:flex;gap:20px;}
+.zoom-controls button{background:transparent;border:none;color:#ffd86b;font-size:20px;cursor:pointer;}
+
+.downnav{background:#16236c;padding:20px;display:flex;align-items:center;gap:20px;}
+.downnav h1{color:white;font-size:38px;}
+.logo{width:95px;}
+
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.9s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+.page-title{background:#003F87;color:white;padding:18px;text-align:center;
+font-size:26px;font-weight:600;}
+
+.intro-section{display:flex;justify-content:center;max-width:1150px;margin:auto;padding:40px 20px;gap:25px;}
+.intro-box{background:#E8F1FF;padding:25px;width:50%;border-left:6px solid #003F87;border-radius:10px;}
+.intro-img img{width:100%;border-radius:10px;}
+
+.section-heading{text-align:center;margin-top:40px;font-size:30px;font-weight:700;color:#003F87;}
+
+.content-section{max-width:1150px;margin:40px auto;display:flex;gap:30px;padding:20px;}
+.content-text{width:60%;line-height:1.7;font-size:17px;}
+.content-img img{width:100%;border-radius:10px;}
+.reverse{flex-direction:row-reverse;}
+
+footer{background:#00072d;color:white;text-align:center;padding:18px;margin-top:50px;}
+</style>
+</head>
+
+<body>
+
+<nav class="topnav">
+ <a href="Coutline.html">Home</a>
+ <a href="about.html">About</a>
+ <a href="contact.html">Contact</a>
+ <div class="right-side">
+     <div class="zoom-controls">
+         <button onclick="changeZoom(-1)">A-</button>
+         <button onclick="resetZoom()">A</button>
+         <button onclick="changeZoom(1)">A+</button>
+     </div>
+ </div>
+</nav>
+
+<nav class="downnav">
+ <img src="image.png" class="logo"/>
+ <h1>ONE GUIDE</h1>
+</nav>
+
+<div class="page-title">Meenakshi Amman Temple – Jewel of Dravidian Architecture</div>
+
+<div class="intro-section reveal">
+ <div class="intro-box">
+     <h2>Introduction</h2>
+     <p>
+         The Meenakshi Amman Temple in Madurai, Tamil Nadu, is one of India’s largest and
+         most stunning temple complexes. Dedicated to Goddess Meenakshi (a form of Parvati)
+         and Lord Sundareswarar (Shiva), it stands as a masterpiece of Dravidian architecture.
+     </p>
+     <p>
+         The temple is famous for its towering gopurams, each covered with thousands of colorful sculptures.
+     </p>
+ </div>
+
+ <div class="intro-img">
+     <img src="https://cdn.pixabay.com/photo/2023/06/29/09/52/angkor-thom-8096092_1280.jpg">
+ </div>
+</div>
+
+<h2 class="section-heading reveal">Architecture & Art</h2>
+
+<div class="content-section reveal">
+ <div class="content-text">
+     <p>
+         The temple features 14 magnificent gopurams, the tallest rising over 170 feet.  
+         Every tower is adorned with thousands of hand-sculpted gods, goddesses, demons, and mythical creatures.
+     </p>
+     <p>
+         Inside the complex lies the famous Hall of Thousand Pillars, each carved uniquely.
+     </p>
+ </div>
+
+ <div class="content-img">
+     <img src="https://cdn.pixabay.com/photo/2016/08/07/10/49/brahma-1576032_1280.jpg">
+ </div>
+</div>
+
+<h2 class="section-heading reveal">Cultural Significance</h2>
+
+<div class="content-section reverse reveal">
+ <div class="content-text">
+     <p>
+         Meenakshi Temple is a major pilgrimage site and cultural hub of Tamil Nadu.  
+         The annual Meenakshi Tirukalyanam festival attracts millions of devotees.
+     </p>
+     <p>
+         It symbolizes love, devotion, divine energy, and the artistic excellence of South Indian craftsmen.
+     </p>
+ </div>
+
+ <div class="content-img">
+     <img src="https://cdn.pixabay.com/photo/2016/08/06/14/41/madurai-1574495_1280.jpg">
+ </div>
+</div>
+
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<script>
+let fontSize=100;
+
+function changeZoom(step){fontSize+=step*10;document.documentElement.style.fontSize=fontSize+"%";}
+function resetZoom(){fontSize=100;document.documentElement.style.fontSize="100%";}
+
+function revealOnScroll(){
+ document.querySelectorAll('.reveal').forEach(el=>{
+     if(el.getBoundingClientRect().top<window.innerHeight-100){
+         el.classList.add("active");
+     }
+ });
+}
+
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>

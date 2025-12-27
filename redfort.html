@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Red Fort – Northern India Heritage</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#f4f6fb;color:#003A99;}
+
+.topnav{display:flex;align-items:center;background:#00072d;padding:12px 20px;gap:25px;}
+.topnav a{color:white;text-decoration:none;font-size:16px;}
+.right-side{margin-left:auto;display:flex;gap:20px;}
+.zoom-controls button{background:transparent;border:none;color:#ffd86b;font-size:20px;cursor:pointer;}
+
+.downnav{background:#16236c;padding:20px;display:flex;align-items:center;gap:20px;}
+.downnav h1{color:white;font-size:38px;}
+.logo{width:95px;}
+
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.9s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+.page-title{background:#003F87;color:white;padding:18px;text-align:center;
+font-size:26px;font-weight:600;}
+
+.intro-section{display:flex;justify-content:center;max-width:1150px;margin:auto;padding:40px 20px;gap:25px;}
+.intro-box{background:#E8F1FF;padding:25px;width:50%;border-left:6px solid #003F87;border-radius:10px;}
+.intro-box h2{margin-bottom:10px;}
+.intro-img img{width:100%;border-radius:10px;}
+
+.section-heading{text-align:center;margin-top:40px;font-size:30px;font-weight:700;color:#003F87;}
+
+.content-section{max-width:1150px;margin:40px auto;display:flex;gap:30px;padding:20px;}
+.content-text{width:60%;line-height:1.7;font-size:17px;}
+.content-img img{width:100%;border-radius:10px;}
+.reverse{flex-direction:row-reverse;}
+
+footer{background:#00072d;color:white;text-align:center;padding:18px;margin-top:50px;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+    </div>
+</nav>
+
+<nav class="downnav">
+    <img src="image.png" class="logo" />
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<div class="page-title">Red Fort – Pride of Delhi</div>
+
+<div class="intro-section reveal">
+    <div class="intro-box">
+        <h2>Introduction</h2>
+        <p>
+            The Red Fort, located in the heart of Delhi, is one of India's most historically
+            significant monuments. Built by Mughal Emperor Shah Jahan in 1648, it served as
+            the main residence of Mughal rulers for nearly 200 years.
+        </p>
+        <p>
+            Constructed of red sandstone, the fort is known for its huge walls, exquisite
+            palaces, and intricate carvings, showcasing Mughal grandeur.
+        </p>
+    </div>
+
+    <div class="intro-img">
+        <img src="https://cdn.pixabay.com/photo/2014/07/07/17/11/lahore-gate-386286_1280.jpg">
+    </div>
+</div>
+
+<h2 class="section-heading reveal">Architecture & Structure</h2>
+
+<div class="content-section reveal">
+    <div class="content-text">
+        <p>
+            The Red Fort blends Persian, Timurid, and Indian architectural styles. With its
+            massive ramparts stretching over 2 km, it includes iconic structures such as the
+            Diwan-i-Aam, Diwan-i-Khas, Rang Mahal, and the Pearl Mosque.
+        </p>
+        <p>
+            The fort’s carvings, marble inlays, and floral patterns represent the artistic
+            excellence of the Mughal era.
+        </p>
+    </div>
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2017/04/23/19/16/red-fort-2254704_1280.jpg">
+    </div>
+</div>
+
+<h2 class="section-heading reveal">Historical Importance</h2>
+
+<div class="content-section reverse reveal">
+    <div class="content-text">
+        <p>
+            On 15 August 1947, Jawaharlal Nehru raised the Indian national flag from
+            the Red Fort’s Lahori Gate — a tradition that continues every Independence Day.
+        </p>
+        <p>
+            Today, it is a UNESCO World Heritage Site and a powerful symbol of India's freedom.
+        </p>
+    </div>
+    <div class="content-img">
+        <img src="https://cdn.pixabay.com/photo/2013/10/28/10/43/fathepur-sikri-201748_1280.jpg">
+    </div>
+</div>
+
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<script>
+let fontSize=100;
+function changeZoom(step){fontSize+=step*10;document.documentElement.style.fontSize=fontSize+"%";}
+function resetZoom(){fontSize=100;document.documentElement.style.fontSize="100%";}
+function revealOnScroll(){
+    document.querySelectorAll('.reveal').forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight-100) el.classList.add('active');
+    });
+}
+window.addEventListener('scroll',revealOnScroll);revealOnScroll();
+</script>
+
+</body>
+</html>

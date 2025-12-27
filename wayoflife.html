@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Philosophy – Life & Afterlife</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f4f6fb;
+            color: #003A99;
+        }
+
+        /* ---------------- NAVBAR (YOUR STYLE) ---------------- */
+
+        .topnav {
+            display: flex;
+            align-items: center;
+            background-color: #00072d;
+            padding: 12px 20px;
+            gap: 25px;
+        }
+
+        .topnav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .right-side {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .zoom-controls button {
+            background: transparent;
+            border: none;
+            color: #ffd86b;
+            font-size: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .zoom-controls button:hover { opacity: 0.7; }
+
+        .user-name {
+            color: white;
+            cursor: pointer;
+        }
+
+        .downnav {
+            background-color: #16236c;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .downnav h1 {
+            color: white;
+            font-size: 38px;
+        }
+
+        .logo {
+            width: 95px;
+        }
+
+        /* ------------------- SCROLL ANIMATION ------------------- */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ------------------- PAGE TITLE ------------------- */
+
+        .page-title {
+            background: #003F87;
+            color: white;
+            padding: 18px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        /* ---------------- INTRO SECTION ---------------- */
+
+        .intro-section {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 40px 20px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .intro-box {
+            background: #E8F1FF;
+            padding: 25px;
+            width: 50%;
+            border-left: 6px solid #003F87;
+            border-radius: 10px;
+        }
+
+        .intro-box h2 {
+            color: #003F87;
+            margin-bottom: 10px;
+        }
+
+        .intro-img {
+            width: 45%;
+        }
+
+        .intro-img img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* ---------------- SECTION HEADING ---------------- */
+
+        .section-heading {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 30px;
+            color: #003F87;
+            font-weight: 700;
+        }
+
+        /* ---------------- CONTENT SECTIONS ---------------- */
+
+        .content-section {
+            max-width: 1150px;
+            margin: 40px auto;
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .content-text {
+            width: 60%;
+            font-size: 17px;
+            line-height: 1.75;
+            color: #003A99;
+        }
+
+        .content-img {
+            width: 40%;
+        }
+
+        .content-img img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .reverse { flex-direction: row-reverse; }
+
+        /* -------------- EXTRA FEATURE SECTION -------------- */
+
+        .feature-box {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+        }
+
+        .feature-title {
+            font-size: 26px;
+            color: #003F87;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+
+        footer {
+            background: #00072d;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="topnav">
+        <a href="Coutline.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="right-side">
+            <div class="zoom-controls">
+                <button onclick="changeZoom(-1)">A-</button>
+                <button onclick="resetZoom()">A</button>
+                <button onclick="changeZoom(1)">A+</button>
+            </div>
+
+            <span id="usernameDisplay" class="user-name"></span>
+        </div>
+    </nav>
+
+    <!-- LOGO NAV -->
+    <nav class="downnav">
+        <img src="image.png" class="logo">
+        <h1>ONE GUIDE</h1>
+    </nav>
+
+    <!-- PAGE TITLE -->
+    <div class="page-title">Indian Philosophy of Life & Afterlife</div>
+
+    <!-- SECTION 1 -->
+    <div class="intro-section reveal">
+        
+        <div class="intro-box">
+            <h2>Introduction</h2>
+            <p>
+                Indian philosophy presents a deep understanding of human life, the soul, and the cosmic order.
+                Across Hinduism, Buddhism, and Jainism, the themes of karma, rebirth, and liberation create a
+                meaningful framework to understand the journey of existence.
+            </p>
+            <p>
+                This page explores how ancient thinkers explained life’s purpose and the path beyond it.
+            </p>
+        </div>
+
+        <div class="intro-img">
+            <img src="sai_images/1-1-1.avif" alt="image">
+        </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <h2 class="section-heading reveal">Atman, Karma & Life’s Purpose</h2>
+
+    <div class="content-section reveal">
+        <div class="content-text">
+            <p>
+                Indian philosophy teaches that the human essence — the **Atman** — is eternal and divine.
+                Our experiences, joys, and struggles shape our spiritual evolution.
+            </p>
+            <p>
+                Karma acts as a cosmic balance, rewarding or correcting actions over many lifetimes.
+                This moral continuity encourages righteous living, compassion, and self-awareness.
+            </p>
+        </div>
+
+        <div class="content-img">
+            <img src="sai_images/1-1-2.avif">
+        </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <h2 class="section-heading reveal">Rebirth & The Afterlife</h2>
+
+    <div class="content-section reverse reveal">
+        <div class="content-text">
+            <p>
+                Death is not an end but a transition — the soul carries impressions from one life to the next.  
+                This cycle, known as **Samsara**, continues until one attains ultimate freedom.
+            </p>
+            <p>
+                Liberation (**Moksha**) is the highest goal: a state where the soul unites with infinite
+                consciousness, transcending all suffering, desire, and limitations.
+            </p>
+        </div>
+
+        <div class="content-img">
+            <img src="sai_images/1-1-3.avif">
+        </div>
+    </div>
+
+    <!-- EXTRA SECTION -->
+    <div class="feature-box reveal">
+        <h3 class="feature-title">Paths to Liberation</h3>
+        <p>
+            Indian traditions describe multiple paths that lead the soul toward enlightenment:
+        </p>
+        <ul>
+            <li><strong>Jnana Yoga</strong> – Path of knowledge & self-realization</li>
+            <li><strong>Bhakti Yoga</strong> – Path of devotion & surrender</li>
+            <li><strong>Karma Yoga</strong> – Path of selfless action</li>
+            <li><strong>Dhyana / Raja Yoga</strong> – Path of meditation</li>
+        </ul>
+        <p>
+            Each path guides individuals toward clarity, purity, and unity with the eternal.
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 One Guide. All Rights Reserved.
+    </footer>
+
+
+    <!-- SCRIPT: ZOOM + USERNAME + SCROLL EFFECT -->
+    <script>
+        let fontSize = 100;
+        function changeZoom(step){ fontSize += step * 10; document.documentElement.style.fontSize = fontSize + "%"; }
+        function resetZoom(){ fontSize = 100; document.documentElement.style.fontSize = "100%"; }
+
+        const username = localStorage.getItem("username");
+        document.getElementById("usernameDisplay").textContent = username || "Login";
+
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let r of reveals) {
+                const elementTop = r.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) {
+                    r.classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+
+</body>
+</html>

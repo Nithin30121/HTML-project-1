@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Community Discussion – One Guide</title>
+
+<style>
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+    color: #003A99;
+}
+
+/* TOP NAV */
+.topnav {
+    display: flex;
+    align-items: center;
+    background-color: #00072d;
+    padding: 12px 20px;
+    gap: 25px;
+}
+.topnav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.right-side {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.zoom-controls button {
+    background: transparent;
+    border: none;
+    color: #ffd86b;
+    font-size: 20px;
+    cursor: pointer;
+}
+.user-name {
+    color: white;
+}
+
+/* LOGO NAV */
+.downnav {
+    background-color: #16236c;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.downnav h1 {
+    color: white;
+    font-size: 38px;
+}
+.logo {
+    width: 95px;
+}
+
+/* PAGE TITLE */
+.page-title {
+    background: #003F87;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* COMMENT SECTION */
+.comment-box-wrapper {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+textarea {
+    width: 100%;
+    height: 160px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #79b7ff;
+    outline: none;
+    resize: none;
+}
+
+.post-btn {
+    background: #0066cc;
+    color: white;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.post-btn:hover {
+    background: #004d99;
+}
+
+/* COMMENTS DISPLAY */
+.comment-list {
+    margin-top: 30px;
+}
+.comment {
+    background: #e8f2ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: #00072d;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+        <span id="usernameDisplay" class="user-name"></span>
+    </div>
+</nav>
+
+<!-- LOGO NAV -->
+<nav class="downnav">
+    <img src="image.png" class="logo" />
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<!-- TITLE -->
+<div class="page-title reveal">Community Discussion</div>
+
+<!-- COMMENT SECTION -->
+<div class="comment-box-wrapper reveal">
+
+    <textarea id="commentInput" placeholder="Share your thoughts, ask a question, or begin a cultural discussion..."></textarea>
+    <button class="post-btn" onclick="postComment()">Post</button>
+
+    <div id="commentList" class="comment-list"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 One Guide. All Rights Reserved.
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+let fontSize = 100;
+function changeZoom(step) {
+    fontSize += step * 10;
+    document.documentElement.style.fontSize = fontSize + "%";
+}
+function resetZoom() {
+    fontSize = 100;
+    document.documentElement.style.fontSize = "100%";
+}
+
+// SHOW USERNAME
+const username = localStorage.getItem("username");
+document.getElementById("usernameDisplay").textContent = username ? username : "";
+
+// POST COMMENT
+function postComment() {
+    const input = document.getElementById("commentInput");
+    const list = document.getElementById("commentList");
+
+    if (input.value.trim() === "") return;
+
+    const div = document.createElement("div");
+    div.className = "comment";
+    div.textContent = input.value;
+
+    list.prepend(div);
+    input.value = "";
+}
+
+// REVEAL ANIMATION
+function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+    reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>

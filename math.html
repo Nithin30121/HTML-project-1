@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mathematics & Number System – Indian Science</title>
+<style>
+/* same styles as your Vedanta template (colors, navbar, reveal, etc.) */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}
+body{background:#f4f6fb;color:#003A99}
+.topnav{display:flex;align-items:center;background:#00072d;padding:12px 20px;gap:25px}
+.topnav a{color:#fff;text-decoration:none;font-size:16px}
+.right-side{margin-left:auto;display:flex;align-items:center;gap:20px}
+.zoom-controls button{background:transparent;border:0;color:#ffd86b;font-size:20px;cursor:pointer;font-weight:700}
+.zoom-controls button:hover{opacity:.7}
+.user-name{color:#fff;cursor:pointer}
+.downnav{background:#16236c;padding:20px;display:flex;align-items:center;gap:20px}
+.downnav h1{color:#fff;font-size:38px}
+.logo{width:95px}
+.reveal{opacity:0;transform:translateY(40px);transition:all .9s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+.page-title{background:#003F87;color:#fff;padding:18px;text-align:center;font-size:26px;font-weight:600}
+.intro-section{display:flex;justify-content:center;max-width:1150px;margin:auto;padding:40px 20px;gap:25px}
+.intro-box{background:#E8F1FF;padding:25px;width:50%;border-left:6px solid #003F87;border-radius:10px}
+.intro-box h2{color:#003F87;margin-bottom:10px}
+.intro-img{width:45%}
+.intro-img img{width:100%;border-radius:10px}
+.section-heading{text-align:center;margin-top:40px;font-size:30px;color:#003F87;font-weight:700}
+.content-section{max-width:1150px;margin:40px auto;display:flex;gap:30px;padding:20px}
+.content-text{width:60%;font-size:17px;line-height:1.75}
+.content-img{width:40%}
+.content-img img{width:100%;border-radius:10px}
+.reverse{flex-direction:row-reverse}
+.feature-box{max-width:1100px;margin:40px auto;background:#fff;padding:35px;border-radius:15px;box-shadow:0 4px 18px rgba(0,0,0,.15)}
+.feature-title{font-size:26px;color:#003F87;margin-bottom:10px;font-weight:700}
+footer{background:#00072d;color:#fff;text-align:center;padding:18px;margin-top:50px;font-size:14px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <a href="Coutline.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="right-side">
+    <div class="zoom-controls">
+      <button onclick="changeZoom(-1)">A-</button>
+      <button onclick="resetZoom()">A</button>
+      <button onclick="changeZoom(1)">A+</button>
+    </div>
+    <span id="usernameDisplay" class="user-name"></span>
+  </div>
+</nav>
+
+<nav class="downnav">
+  <img src="image.png" class="logo" alt="logo">
+  <h1>ONE GUIDE</h1>
+</nav>
+
+<div class="page-title">Mathematics & Number System</div>
+
+<!-- INTRO -->
+<div class="intro-section reveal">
+  <div class="intro-box">
+    <h2>Overview</h2>
+    <p>
+      India’s contributions to mathematics are foundational — the invention of zero, the decimal system,
+      early advances in algebra and trigonometry, and influential works by Aryabhata, Brahmagupta, and Bhaskara.
+    </p>
+    <p>
+      This page explores how ancient scholars formalized numerical notation, solved complex equations,
+      and influenced math globally.
+    </p>
+  </div>
+  <div class="intro-img">
+    <img src="sai_images/4-1-1.avif" alt="Mathematics placeholder">
+  </div>
+</div>
+
+<!-- SECTION 1 -->
+<h2 class="section-heading reveal">The Invention of Zero & Decimal System</h2>
+<div class="content-section reveal">
+  <div class="content-text">
+    <p>
+      The concept of zero (śūnya) and place-value decimal notation transformed computation. Indian mathematicians
+      developed a concise symbol system that allowed efficient arithmetic and later enabled algebraic progress.
+    </p>
+    <p>
+      Texts and inscriptions show early use of zero and systematic numeral representation that spread to the Middle East and Europe.
+    </p>
+  </div>
+  <div class="content-img">
+    <img src="sai_images/4-1-2.avif" alt="Zero and decimal placeholder">
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<h2 class="section-heading reveal">Algebra, Trigonometry & Key Scholars</h2>
+<div class="content-section reverse reveal">
+  <div class="content-text">
+    <p>
+      Aryabhata introduced trigonometric tables, while Brahmagupta and Bhaskara solved quadratic equations and discussed
+      negative numbers and rules for arithmetic operations. Their algorithms were precise and often more advanced
+      than contemporary approaches elsewhere.
+    </p>
+    <p>
+      These works laid the groundwork for later mathematical advances worldwide.
+    </p>
+  </div>
+  <div class="content-img">
+    <img src="sai_images/4-1-3.avif" alt="Aryabhata placeholder">
+  </div>
+</div>
+
+<!-- FEATURE BOX -->
+<div class="feature-box reveal">
+  <h3 class="feature-title">Important Topics</h3>
+  <ul>
+    <li>Zero (śūnya) and place-value notation</li>
+    <li>Trigonometry & sine tables</li>
+    <li>Algebraic solutions and number theory</li>
+    <li>Mathematical astronomy links</li>
+  </ul>
+</div>
+
+<footer>© 2025 One Guide. All Rights Reserved.</footer>
+
+<script>
+let fontSize=100;
+function changeZoom(step){fontSize+=step*10;document.documentElement.style.fontSize=fontSize+"%"}
+function resetZoom(){fontSize=100;document.documentElement.style.fontSize="100%"}
+document.getElementById("usernameDisplay").textContent = localStorage.getItem("username") || "Login";
+
+function revealOnScroll(){
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+</body>
+</html>

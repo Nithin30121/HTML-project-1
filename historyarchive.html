@@ -1,0 +1,258 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+/* ---------------- NAVBAR ---------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.topnav {
+    display: flex;
+    align-items: center;
+    background-color: #00072d;
+    padding: 12px 20px;
+    gap: 30px;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.right-side {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.zoom-controls button {
+    background: transparent;
+    border: none;
+    color: #ffd86b;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.zoom-controls button:hover { opacity: 0.7; }
+
+/* USER DROPDOWN */
+.user-menu {
+    position: relative;
+    cursor: pointer;
+}
+.user-name {
+    font-size: 16px;
+    padding: 6px 10px;
+    color: white;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    top: 30px;
+    right: 0;
+    min-width: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 50;
+}
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #003A99;
+    text-decoration: none;
+    border-bottom: 1px solid #e6e6e6;
+}
+.dropdown a:hover { background: #eaf6ff; }
+
+.user-menu.open .dropdown { display: block; }
+
+/* LOGO NAV */
+.downnav {
+    display: flex;
+    align-items: center;
+    background-color: #16236c;
+    padding: 20px;
+    gap: 20px;
+}
+.logo {
+    width: 100px;
+}
+.downnav h1 {
+    color: white;
+    font-size: 40px;
+}
+
+/* ---------------- CARD CSS ---------------- */
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+
+.card{
+  width:325px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+  margin:20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img{
+  width:100%;
+  height: auto;
+}
+
+.card-content{
+  padding:16px;
+}
+
+.card-content h3{
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.card-content a {
+  color: #000000;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAVBAR -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+
+        <div class="user-menu">
+            <span id="usernameDisplay" class="user-name"></span>
+            <div id="userDropdown" class="dropdown">
+                <a href="profile.html">Profile</a>
+                <a href="#" onclick="logoutUser()">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- LOGO NAVBAR -->
+<nav class="downnav">
+    <img src="image.png" class="logo">
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<h1 style="text-align:center;margin-top:30px;"></h1>
+
+<div class="card-container">
+ 
+  <!-- CARD 1 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h1.png">
+    <div class="card-content">
+      <h3>The Indus Valley Civilization: Origins of Urban India</h3>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h2.png">
+    <div class="card-content">
+      <h3>Maurya and Gupta Empires: The Golden Age of Ancient India</h3>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h3.png">
+    <div class="card-content">
+      <h3>Medieval India: Dynasties, Culture, and Transformation</h3>
+    </div>
+  </div>
+
+</div>
+
+<div class="card-container">
+ 
+  <!-- CARD 1 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h4.png">
+    <div class="card-content">
+      <h3>The Mughal Era: Art, Architecture, and Administration</h3>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h5.png">
+    <div class="card-content">
+      <h3>Rise of Regional Kingdoms: South, East, and North India</h3>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h6.png">
+    <div class="card-content">
+      <h3>British Colonial Rule: Impact, Policies, and Resistance</h3>
+    </div>
+  </div>
+
+</div>
+
+<div class="card-container">
+ 
+  <!-- CARD 1 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h7.png">
+    <div class="card-content">
+      <h3>Indian Freedom Struggle: Movements, Leaders, and Milestones</h3>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h8.png">
+    <div class="card-content">
+      <h3>Post-Independence India: Nation-Building and Modern Challenges</h3>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card" onclick="">
+    <img src="/sai_images/h9.png">
+    <div class="card-content">
+      <h3>Cultural Heritage of India: Literature, Religion, and Traditions Through Ages</h3>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

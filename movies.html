@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Indian Culture – Movies</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: #E6F7FF;
+    }
+
+    /* ===========================
+       NAVBAR
+    ============================ */
+    .navbar {
+        width: 100%;
+        background: linear-gradient(90deg, #003B73, #005A9C);
+        color: white;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        z-index: 999;
+        position: sticky;
+        top: 0;
+    }
+
+    .navbar .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar img {
+        height: 22px;
+    }
+
+    .navbar h1 {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .navbar a {
+        color: #AEEBF5;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 17px;
+        transition: 0.3s;
+    }
+
+    .navbar a:hover {
+        color: #ffffff;
+    }
+
+    /* ===========================
+       HERO SECTION
+    ============================ */
+    .hero {
+        width: 100%;
+        padding: 60px 20px;
+        text-align: center;
+        background: linear-gradient(180deg, #004E89, #0077B6);
+        color: white;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        opacity: 0.9;
+    }
+
+    /* ===========================
+       MOVIE GRID
+    ============================ */
+    .movie-grid {
+        width: 90%;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+    }
+
+    /* ===========================
+       MOVIE CARD
+    ============================ */
+    .card {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+        transition: 0.4s;
+        position: relative;
+        border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    }
+
+    .card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-bottom: 2px solid #004E89;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #004E89;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 15px;
+        color: #003A66;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 5px 10px;
+        background: #AEEBF5;
+        color: #004E89;
+        font-size: 12px;
+        border-radius: 8px;
+        margin-right: 5px;
+        font-weight: 600;
+    }
+
+    .movie-btn {
+        margin-top: 10px;
+        background: #005A9C;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 700;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .movie-btn:hover {
+        background: #003B73;
+    }
+.card img {
+    width: 100%;
+    height: 60%;   /* reduce from 300px */
+    object-fit: cover;
+    border-bottom: 2px solid #004E89;
+}
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+        .movie-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .movie-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- ============================
+     NAVBAR
+============================= -->
+<div class="navbar">
+    <div class="logo-area">
+        
+        <h1>INDIAN CULTURE</h1>
+    </div>
+
+    <a href="Coutline.html">Home</a>
+</div>
+
+<!-- ============================
+     HERO
+============================= -->
+<div class="hero">
+    <h1>Movies That Represent Indian Culture</h1>
+    <p>Explore India’s heritage, traditions, and diversity through the lens of cinema.</p>
+</div>
+
+<!-- ============================
+     MOVIE GRID
+============================= -->
+<div class="movie-grid">
+
+    <!-- CARD 1 -->
+    <div class="card">
+        <img src="Lagaan.jpg" alt="Lagaan">
+        <div class="card-content">
+            <h2>Lagaan</h2>
+            <p>Set in colonial India, it captures rural life, unity, and the spirit of resistance.</p>
+            <span class="tag">Village Life</span>
+            <span class="tag">Colonial Era</span>
+            <br><br>
+            <a href="#" class="movie-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+        <img src="swades.png" alt="Swades">
+        <div class="card-content">
+            <h2>Swades</h2>
+            <p>A returning NRI rediscovers India’s heart—its villages, people, and cultural roots.</p>
+            <span class="tag">Village</span>
+            <span class="tag">Social</span>
+            <br><br>
+            <a href="#" class="movie-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+        <img src="jodhaa_akbar.png" alt="Jodhaa Akbar">
+        <div class="card-content">
+            <h2>Jodhaa Akbar</h2>
+            <p>Royal traditions, Mughal architecture, and Indo-Islamic history beautifully portrayed.</p>
+            <span class="tag">History</span>
+            <span class="tag">Heritage</span>
+            <br><br>
+            <a href="#" class="movie-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card">
+        <img src="tanjaah.png" alt="Tanhaji">
+        <div class="card-content">
+            <h2>Tanhaji</h2>
+            <p>Displays Maratha bravery, strategy, and warrior culture of the 17th century.</p>
+            <span class="tag">Historical</span>
+            <span class="tag">Warrior</span>
+            <br><br>
+            <a href="#" class="movie-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card">
+        <img src="parineeta.png" alt="Parineeta">
+        <div class="card-content">
+            <h2>Parineeta</h2>
+            <p>Elegant portrayal of Bengali culture, music, romance, festivals, and traditions.</p>
+            <span class="tag">Bengal</span>
+            <span class="tag">Traditional</span>
+            <br><br>
+            <a href="#" class="movie-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card">
+        <img src="gullyboy.png" alt="Gully Boy" sizes="">
+        <div class="card-content">
+            <h2>Gully Boy</h2>
+            <p>Captures modern India—street art, dreams, struggles, and youth expression.</p>
+            <span class="tag">Modern</span>
+            <span class="tag">Youth Culture</span>
+            <br><br>
+            <a href="#" class="movie-btn">Learn More</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Content Creator Panel – One Guide</title>
+
+<style>
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background: #f4f6fb;
+}
+
+/* TOP NAV */
+.topnav {
+    display: flex;
+    align-items: center;
+    background-color: #00072d;
+    padding: 12px 20px;
+    gap: 25px;
+}
+.topnav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.right-side {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.zoom-controls button {
+    background: transparent;
+    border: none;
+    color: #ffd86b;
+    font-size: 20px;
+    cursor: pointer;
+}
+.user-name {
+    color: white;
+}
+
+/* LOGO NAV */
+.downnav {
+    background-color: #16236c;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.downnav h1 {
+    color: white;
+    font-size: 38px;
+}
+.logo { width: 95px; }
+
+/* PAGE TITLE */
+.page-title {
+    background: #003F87;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.75s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SECTION HEADER */
+.section-header {
+    font-size: 26px;
+    font-weight: 700;
+    color: #003A99;
+    width: 90%;
+    margin: 40px auto 10px auto;
+}
+
+/* GRID */
+.grid {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.18);
+}
+.card h3 {
+    color: #003F87;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.card p {
+    font-size: 15px;
+}
+
+/* BUTTON */
+.action-btn {
+    margin-top: 15px;
+    display: inline-block;
+    background: #0077cc;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+}
+.action-btn:hover {
+    background: #005fa3;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 50px;
+    background: #00072d;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+    <a href="Coutline.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="right-side">
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-1)">A-</button>
+            <button onclick="resetZoom()">A</button>
+            <button onclick="changeZoom(1)">A+</button>
+        </div>
+
+        <span id="usernameDisplay" class="user-name"></span>
+    </div>
+</nav>
+
+<!-- LOGO NAV -->
+<nav class="downnav">
+    <img src="image.png" class="logo">
+    <h1>ONE GUIDE</h1>
+</nav>
+
+<!-- TITLE -->
+<div class="page-title reveal">Content Creator Control Center</div>
+
+<!-- SECTION -->
+<h2 class="section-header reveal">🔷 Content Creation Tools</h2>
+
+<div class="grid reveal">
+
+    <div class="card">
+        <h3>📘 Create / Update Educational Content</h3>
+        <p>Write cultural articles, update sections, and enrich the platform with verified knowledge.</p>
+        <a class="action-btn">Edit Content</a>
+    </div>
+
+    <div class="card">
+        <h3>🎨 Interactive Feature Builder</h3>
+        <p>Create quizzes, timelines, maps, flashcards, and interactive learning tools.</p>
+        <a class="action-btn">Create Feature</a>
+    </div>
+
+    <div class="card">
+        <h3>🏛 Manage Virtual Tours</h3>
+        <p>Upload tour routes, add voice guides, and update temple/heritage site details.</p>
+        <a class="action-btn">Manage Tours</a>
+    </div>
+
+</div>
+
+<!-- SECTION 2 -->
+<h2 class="section-header reveal">🔷 Media & Resource Tools</h2>
+
+<div class="grid reveal">
+
+    <div class="card">
+        <h3>🖼 Image / Media Upload</h3>
+        <p>Upload cultural images, videos, diagrams, and visual resources.</p>
+        <a class="action-btn">Upload Media</a>
+    </div>
+
+    <div class="card">
+        <h3>🔍 Fact Checking</h3>
+        <p>Ensure accuracy using AI verification tools and cross-checking cultural texts.</p>
+        <a class="action-btn">Verify Content</a>
+    </div>
+
+    <div class="card">
+        <h3>📄 Drafts & Pending Work</h3>
+        <p>Keep track of incomplete pages and pending interactive elements.</p>
+        <a class="action-btn">View Drafts</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 One Guide. All Rights Reserved.
+</footer>
+
+<script>
+let fontSize = 100;
+function changeZoom(step){ fontSize += step*10; document.documentElement.style.fontSize = fontSize + "%"; }
+function resetZoom(){ fontSize = 100; document.documentElement.style.fontSize = "100%"; }
+
+const username = localStorage.getItem("username");
+document.getElementById("usernameDisplay").textContent = username || "Creator";
+
+function revealOnScroll(){
+    document.querySelectorAll(".reveal").forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 100){
+            el.classList.add("active");
+        }
+    });
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>
